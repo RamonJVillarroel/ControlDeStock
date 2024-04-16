@@ -1,0 +1,10 @@
+{
+    "usuario-admin":{
+        "Administrator":"Administrator",
+        "password":"admin12345"
+    },
+    "usuario-owner":{
+        "owner":"owner",
+        "password":"owner12345"
+    }
+}
