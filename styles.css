@@ -1,0 +1,188 @@
+html .header{
+    border-bottom-style: dashed;
+}
+
+body{
+    font-family: "poppins", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2e;
+    background-image:url(./src/fondop5.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+    color: #adb5bd;
+}
+a:hover{
+    color: #dddfe0;
+}
+
+header{
+    margin: 0;
+    padding: 5px 0 0 0;
+    background-color: #1f1f31;
+    color: #adb5bd;
+    background-image:url(./src/fondop4.png);
+    background-size: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 0 0; 
+    padding: 0 8rem 0 8rem;
+    
+}
+.sesion{
+    padding-bottom: 1rem;
+
+}
+.header, .logo{
+    display: flex;
+    border-bottom: 1px solid #303644;
+}
+.logo{
+    border-bottom: 0;
+}
+header .logo{
+    width: 70px;
+    height: 70px;
+}
+nav{
+    padding: 0.1rem 0 0.1rem 0;
+    position: sticky;
+    top: 0%;
+    filter: drop-shadow(0 8px 8px rgba(143, 138, 138, 0.1));
+    background-color: #1f1f31;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem 0 8rem;
+}
+
+li{
+    list-style: none;
+}
+main{
+    color: aliceblue;
+    padding: 0 8rem 0 8rem; 
+}
+
+footer{
+    position: relative;
+    display: flex;
+    padding: 0 8rem 0 8rem; 
+    justify-content: space-between;
+    background-color: #1f1f31;
+    color: #adb5bd;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+footer a{
+    color: rgb(189, 161, 249);
+}
+
+main img{
+    width: 30vw;
+    height: 35vh;
+}
+.tabla0 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+.tabla1{
+    justify-content: space-between;
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+    min-width: 200px;
+}
+
+.max_vendidos_1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-bottom-style:dashed;
+    border-bottom: 1px solid #303644;
+
+}
+
+.seccion_1, .seccion_2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    
+}
+
+.max_vendidos{
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+
+}
+
+.categorias_max{
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+}
+
+.grafico_ingresos{
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+}
+
+.max_vendidos_1 li{
+    margin-right: 4rem;
+} 
+
+.grafico_ingresos img{
+    height: 33vh;
+    width: 30vw;
+    border-radius: 5px;
+}
+
+.categorias_max img{
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    height: 30vh;
+    width: 23vw;
+}
+
+.grafico_stock{
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+}
+
+.grafico_stock img{
+    height: 30vh;
+    width: 18vw;
+    border-radius: 5px;
+}
