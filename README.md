@@ -2,4 +2,4 @@
 
 # Control de Stock
 
-# Fecha de inicio 01-04-2024**
+# Fecha de inicio 01-04-2024
