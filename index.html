@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shorcut icon" href="./src/logo1.png">
     <script src="https://kit.fontawesome.com/04f66e3763.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Gestor</title>
+    <script src="index.js"></script>
 </head>
 <body>
     
@@ -27,6 +29,7 @@
             <li><a href=""><i class="fa-solid fa-address-book"></i> Contactanos</a></li>
         </ul>
     </nav>
+
     <main>
         <h1>Panel Principal</h1>
         
@@ -34,84 +37,33 @@
             <ul class="tabla0">
                 <li class="tabla1">
                     <p>Cantidad de Productos</p>
-                    <p>[Cantidad]</p>
+                    <h3 id="cantidadProductos"></h3>
+                    
+                    
                 </li>
                 <li class="tabla1">
                     <p>Pedidos</p>
-                    <p>[Cantidad]</p>
+                    <h3 id="pedidos">143</h3>
                 </li>
                 <li class="tabla1">
                     <p>Ingresos Totales
                     </p>
-                    <p>[Cantidad]</p>
+                    <h3 id="ingTotales">17.200$</h3>
                 </li>
-                <li class="tabla1">
-                    <p>Notificaciones
-                    </p>
-                    <p>[Cantidad]</p>
-                </li>
+
             </ul>
         </section>
 
-    
         <section class="seccion_1">
-            <article class="max_vendidos">
-                <h3>Productos mas Vendidos</h3>
-                <ul class="max_vendidos_1">
-                    <li>
-                        <h4>Codigo</h4>
-                        
-                    </li>
-                    <li>
-                        <h4>Proveedor</h4>
-                        
-                    </li>
-                    <li>
-                        <h4>Categoria</h4>
-                        
-                    </li>
-                    <li>
-                        <h4>Cantidad</h4>
-                        
-                    </li>
-                </ul>
-
-                <ul class="max_vendidos_1">
-                    <li>
-                        <p>0D45</p>
-                        
-                    </li>
-                    <li>
-                        <p>Nike</p>
-                        
-                    </li>
-                    <li>
-                        <p>Remera</p>
-                        
-                    </li>
-                    <li>
-                        <p>1</p>
-                        
-                    </li>
-                </ul>
-                <ul class="max_vendidos_1">
-                    <li>
-                        <p>----------</p>
-                        
-                    </li>
-                    <li>
-                        <p>----------</p>
-                        
-                    </li>
-                    <li>
-                        <p>----------</p>
-                        
-                    </li>
-                    <li>
-                        <p>----------</p>
-                        
-                    </li>
-                </ul>
+            <article class="titulo">
+                <h3>Categoria con mas Ventas</h3>
+                <table>
+                    <tbody id="progressBarsContainer"><div id="circleProgressContainer" style="width: 30vw; height: 37vh;">
+                        <canvas id="miGrafico"></canvas>
+                    </div>
+                    </tbody>
+                </table>
+ 
             </article>
 
             <article class="grafico_ingresos">
@@ -119,25 +71,32 @@
                 <img src="./src/grafico_ingresos.PNG" alt="">
             </article>
 
+
+
         </section>
 
         <section class="seccion_2">
-            <article class="categorias_max">
-                <h3>Categoria con mas ventas</h3>
-                <img src="./src/1.jpg" alt="">
+            <article class="max_vendidos">
+                <h3>Productos mas Vendidos</h3>
+                <table class="max_vendidos_1">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Titulo</th>
+                            <th>Categoría</th>
+                            <th>Valoración</th>
+                            <th>Precio</th>
+                            <th>Ventas</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="tablaBody"></tbody>
+                </table>
+
             </article>
 
-            <article class="categorias_max">
-                <h3>Proveedores con mas ventas</h3>
-                <img src="./src/grafprovee.PNG" alt="">
-            </article>
-
-            <article class="grafico_stock">
-                <h3>Stock</h3>
-                <img src="./src/grafstock.PNG" alt="">
-            </article>
         </section>
-
+  
     </main>
 
     <footer>
