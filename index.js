@@ -29,12 +29,19 @@ CantidadStock((data) => {
  
             const idCell = document.createElement('td');
             idCell.textContent = id;
+
             const tituloCell = document.createElement('td');
             tituloCell.textContent = title;
+            const maxLength = 50;
+            if (title.length > maxLength) {
+                tituloCell.textContent = title.slice(0, maxLength) + '...';
+            }
+            
+
             const categoriaCell = document.createElement('td');
             categoriaCell.textContent = category;
-            const ratingCell = document.createElement('td');
-            ratingCell.textContent = rating.rate;
+            /*const ratingCell = document.createElement('td');
+            ratingCell.textContent = rating.rate;*/
             const precioCell = document.createElement('td');
             precioCell.textContent = `$${price}`;
             const cantidadCell = document.createElement('td');
@@ -46,7 +53,7 @@ CantidadStock((data) => {
             fila.appendChild(idCell);
             fila.appendChild(tituloCell);
             fila.appendChild(categoriaCell);
-            fila.appendChild(ratingCell);
+            /*fila.appendChild(ratingCell);*/
             fila.appendChild(precioCell);
             fila.appendChild(cantidadCell);
 
