@@ -7,20 +7,16 @@ results.then(res=>res.json()).then(data=> {done(data)});
 }
  
 CantidadStock((data) => {
-
     document.getElementById("cantidadProductos").innerHTML = data.length;
-
+    
     const tablaBody = document.getElementById('tablaBody');
     tablaBody.innerHTML = ''; // Limpiar el contenido actual de la tabla
 
-    data.forEach((producto) => {
-        console.log(producto); // Verifica la estructura del objeto producto en la consola
-        // Resto del código para crear y agregar filas a la tabla
-    });
+    
     data.forEach((producto) => {
         const { id, title, category, price, rating } = producto;
 
-        if (rating.rate >= 4.5) { // Filtrar productos con rating mayor o igual a 4.5
+        if (rating.count >= 400) { // Filtrar productos con rating mayor o igual a 4.5
             const fila = document.createElement('tr');
 
             // Crear celdas para cada propiedad del producto
@@ -63,28 +59,42 @@ CantidadStock((data) => {
              
         }
     });
-    // Datos de ejemplo (categorías y ventas)--------------------------------------------------------------------------
-// Obtener los datos de la API y procesarlos
-CantidadStock((data) => {
+    
     // Objeto para almacenar las ventas por categoría
     const ventasPorCategoria = {};
-
+    const preciosPorCategoria = {};
     // Calcular las ventas totales y las ventas por categoría
     let ventasTotales = 0;
+    let preciosTotales = 0;
+    let preciosDiarios = 0;
     data.forEach((producto) => {
-        const { category, rating } = producto;
+        const { category, price, rating } = producto;
         const ventas = rating.count;
-
+        const prices = price;
         // Sumar las ventas totales y a la categoría correspondiente
         ventasTotales += ventas;
+        preciosDiarios += prices;
+        preciosTotales += prices*ventas;
+        
+        if (category in preciosPorCategoria) {
+            preciosPorCategoria[category] += prices*ventas;
+            
+        } else {
+            preciosPorCategoria[category] = prices*ventas;
+        }
+
         if (category in ventasPorCategoria) {
             ventasPorCategoria[category] += ventas;
+            
         } else {
             ventasPorCategoria[category] = ventas;
         }
     });
 
-    // Extraer etiquetas (categorías) y valores (porcentajes) del objeto
+    document.getElementById("ingDiarios").innerHTML = '$ ' + parseInt(preciosDiarios);
+    document.getElementById("ingTotales").innerHTML = '$ ' + parseInt(preciosTotales);
+
+    // Extraer etiquetas (categorías) y valores (ventas) del objeto
     const labels = Object.keys(ventasPorCategoria) ;
     const valores = Object.values(ventasPorCategoria);
 
@@ -95,6 +105,7 @@ CantidadStock((data) => {
         data: {
             labels: labels,
             datasets: [{
+                label: 'Cantidad de Ventas',
                 data: valores,
                 backgroundColor: getRandomColors(labels.length),
                 
@@ -103,20 +114,81 @@ CantidadStock((data) => {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-           
+            plugins: {
+                legend: {
+                    position: 'left',
+                    labels: {
+                        color: 'white' // Color de las etiquetas de la leyenda
+                    }
+                }
+            }
         }
     });
+
+    // Extraer etiquetas (categorías) y valores (precio) del objeto
+    const categorias = Object.keys(preciosPorCategoria) ;
+    const ingresos = Object.values(preciosPorCategoria);
+
+    // Crear el gráfico de barras vertical con Chart.js
+    const ctx1 = document.getElementById('miGraficoBarras').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: categorias,
+            datasets: [{
+                label: 'Ingresos por Categoría',
+                data: ingresos,
+                backgroundColor: getRandomColors(labels.length), // Color de las barras
+                borderColor: 'rgba(54, 162, 235, 1)', // Borde de las barras
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white', // Color de las etiquetas (categorías)
+                        font: {
+                            weight: 'bold' // Establecer negrita para las etiquetas
+                        }
+                    }
+                },
+                y: {
+                    beginAtZero: true, // Iniciar el eje Y en 0
+                    ticks: {
+                        color: 'white', // Color de las etiquetas (ingresos)
+                        callback: (value) => `${value} $` // Agregar símbolo de dólar a los ticks del eje Y
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false // Ocultar la leyenda (incluyendo los labels de clic)
+                }
+            }
+        }
+    });
+
+
+
+
+
+    // Función para generar colores aleatorios
+    function getRandomColors(num) {
+        const colors = [];
+        for (let i = 0; i < num; i++) {
+            const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            colors.push(color);
+        }
+        return colors;
+    }
 });
 
-// Función para generar colores aleatorios
-function getRandomColors(num) {
-    const colors = [];
-    for (let i = 0; i < num; i++) {
-        const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        colors.push(color);
-    }
-    return colors;
-}
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav');
 
-
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Alternar la clase 'active' en el contenedor de enlaces
 });
