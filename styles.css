@@ -100,8 +100,6 @@ footer a{
 
 
 .tabla0 {
-    /*display: flex;
-    justify-content: space-between;*/
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 110px;
