@@ -1,0 +1,271 @@
+html .header{
+    border-bottom-style: dashed;
+}
+h1{
+    color: #adb5bd;
+}
+
+body{
+    font-family: "poppins", sans-serif;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2e;
+    background-image:url(./src/fondop3.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration: none;
+    color: #adb5bd;
+}
+a:hover{
+    color: #dddfe0;
+}
+
+header{
+    margin: 0;
+    padding: 5px 0 0 0;
+    background-color: #1f1f31;
+    color: #adb5bd;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 0 0; 
+    padding: 0 8rem 0 8rem;
+    
+}
+.sesion{
+    padding-bottom: 1rem;
+
+}
+.header, .logo{
+    display: flex;
+    border-bottom: 1px solid #303644;
+}
+.logo{
+    border-bottom: 0;
+}
+header .logo{
+    width: 55px;
+    height: 55px;
+}
+.header .logo{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+li{
+    list-style: none;
+}
+main{
+    color: white;
+    padding: 0 8rem 0 8rem; 
+}
+
+footer{
+    position: relative;
+    display: flex;
+    padding: 0 8rem 0 8rem; 
+    justify-content: space-between;
+    background-color: #1f1f31;
+    color: #adb5bd;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+footer a{
+    color: rgb(189, 161, 249);
+}
+
+
+nav{
+    padding: 0.1rem 0 0.1rem 0;
+    position: sticky;
+    top: 0%;
+    filter: drop-shadow(0 8px 8px rgba(143, 138, 138, 0.1));
+    background-color: #1f1f31;
+    opacity: 88%;
+    z-index: 1000;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem 0 8rem;
+}
+.menu-toggle {
+    display: none; /* Ocultar inicialmente en pantallas grandes */
+    cursor: pointer;
+}
+/*---------------------Menu desplegable < 850px-----------------------------*/
+@media (max-width: 850px) {
+    .menu-toggle {
+        display: block;
+        padding: 0 2rem 0 2rem;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1f1f31;
+        top: 10px;
+        width: calc(100% - 16rem);
+        padding: 20px;
+        z-index: 1000;
+        padding: 0 2rem 0 2rem;
+    }
+    .nav li {
+        margin-bottom: 10px;
+    }
+    .nav.active {
+        opacity: 1;
+        display: block; /* Mostrar las opciones de navegación cuando la clase 'active' está presente */
+    }
+    .header, main, footer{
+        padding: 0 2rem 0 2rem;
+    }
+    .tabla-scroll {
+        overflow-x: auto; /* Habilitar el desplazamiento horizontal */
+        max-width: 100%; /* Ajustar al ancho máximo de su contenedor */
+        margin-bottom: 20px; /* Espacio opcional para separar del contenido debajo */
+    }
+}
+/*--------------------Eliminacion de padding < 850-------------------------------*/
+
+
+
+.tabla0 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Mostrar 4 columnas en pantallas grandes */
+    gap: 40px;
+    padding: 0;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+@media (max-width: 1200px) {
+    .tabla0 {
+        grid-template-columns: repeat(2, 1fr); /* Mostrar 2 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 800px) {
+    .tabla0 {
+        grid-template-columns: repeat(1, 1fr); /* Mostrar 1 columna en pantallas pequeñas */
+    }
+}
+/*----------------------------------------------------------------------------------------------*/
+
+.tabla1{
+    justify-content: space-between;
+    border: 1px solid #303644;
+    filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
+    opacity: 86%;
+    background-color: #1f1f31;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.tabla1:hover, .titulo1:hover {
+    transform: rotateY(10deg); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
+}
+
+.tabla1 .valor-barra {
+    width: 100%;
+    height: 5px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.tabla1 .valor-numerico {
+    display: block;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    transition: width 0.3s ease;
+}
+
+
+.max_vendidos_1{
+    padding: 0.5rem;
+}
+table.max_vendidos_1 th{
+    color: white;
+}
+table.max_vendidos_1 th,
+table.max_vendidos_1 td {
+    border-bottom-style:dashed;
+    border-bottom: 1px solid #303644;
+    padding: 1rem; 
+    text-align: left;
+}
+
+.seccion_1, .seccion_2{
+    /*display: flex;
+    justify-content: space-between;*/
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 70px;
+    margin-top: 3rem;
+    
+}
+
+.max_vendidos{
+    background-color: #1f1f31;
+    padding: 0.5rem;
+    color: #adb5bd;
+    opacity: 86%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+}
+
+.categorias_max{
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: #adb5bd;
+    opacity: 86%;
+    filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
+}
+
+.grafico_ingresos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #adb5bd;
+    opacity: 86%;
+    height: 32vh;
+}
+
+.titulo{
+    padding: 1.5rem;
+    border-radius: 5px;
+    opacity: 86%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #adb5bd;
+    opacity: 86%;
+}
+
+.titulo1{
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: white;
+    opacity: 86%;
+    border: 1px solid #303644;
+    background-color: #1f1f31;
+    filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
+}
+
