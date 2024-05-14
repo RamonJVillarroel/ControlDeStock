@@ -1,3 +1,4 @@
+
 function CantidadStock(done){
 
 const results = fetch('https://fakestoreapi.com/products');
@@ -192,3 +193,63 @@ const navLinks = document.querySelector('.nav');
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active'); // Alternar la clase 'active' en el contenedor de enlaces
 });
+
+// Contenedor de productos
+
+function contenedorProductos(done){
+    const results = fetch('https://fakestoreapi.com/products');
+    results.then(res=>res.json()).then(data=> {done(data)});
+}
+const editarProducto=()=>{
+    alert("editar productos sera con la api")
+}
+const deleteProducto=()=>{
+    alert("eliminar productos sera con la api")
+}
+contenedorProductos((data)=>{
+    let ContenedorProd =document.getElementById('productosContenedor')
+    ContenedorProd.innerHTML=''
+    data.forEach(producto => {
+        console.log(producto);
+        ContenedorProd.innerHTML +=`<div class="contenedorProd"> 
+        <img src=${producto.image} alt="imgProductos">
+        <p>Nombre del producto:</p>
+        <p>${producto.title}</p>
+        <p>Categoria:</p>
+        <p>${producto.category}</p>
+        <button  onClick="editarProducto()">Editar</button>
+        <button  onClick="deleteProducto()">Eliminar</button>
+        </div>
+        `
+    });
+   
+})
+const editarProveedor=()=>{
+ alert("la edicion se va hacer a traves de la api")
+}
+const deleteProveedor=()=>{
+    alert("se eliminaran con la api")
+}
+fetch('../json/proveedores.json')
+    .then((respuesta) => respuesta.json())
+    .then((data) => {
+        contenedorProveedores(data);
+});
+const contenedorProveedores=(data)=>{
+    let contenedorProveedores =document.getElementById('proveedoresContenedor')
+    contenedorProveedores.innerHTML=''
+    data.forEach(proveedor => {
+        contenedorProveedores.innerHTML +=` 
+        <div class="contenProveedor">
+        <span><img src=${proveedor.image} alt="imgPerfilproveedor"></span>
+        <h4><strong>Nombre:</strong> ${proveedor.proveedorName}</h4>
+        <p><strong>celular:</strong> ${proveedor.numero} </p>
+        <p><strong>mail:</strong> ${proveedor.mail} </p>
+        <p><strong>productos:</strong> ${proveedor.productos} </p>
+        <button  onClick="editarProveedor()">Editar</button>
+        <button  onClick="deleteProveedor()">Eliminar</button>
+        </div>   
+        ` 
+    });
+}
+

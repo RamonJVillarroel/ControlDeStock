@@ -1,25 +1,30 @@
 [{
-    "proveedor": "juan pablo",
+    "proveedorName": "juan pablo",
     "productos": "tecnologia",
     "mail":"juan@test.com",
-    "numero":"000000"
+    "numero":"000000",
+    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
 },
 {
-    "proveedor": "juan pablo",
+    "proveedorName": "juan pablo",
     "productos": "ropa hombre",
     "mail":"juan@test.com",
-    "numero":"000000"
+    "numero":"000000",
+    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
 },
 {
-    "proveedor": "juan pablo",
+    "proveedorName": "juan pablo",
     "productos": "ropa dama",
     "mail":"juan@test.com",
-    "numero":"000000"
+    "numero":"000000",
+    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
 },
 {
-    "proveedor": "juan pablo",
+    "proveedorName": "juan pablo",
     "productos": "joyeria",
     "mail":"juan@test.com",
-    "numero":"000000"
+    "numero":"000000",
+    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
+
 }
 ]
