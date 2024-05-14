@@ -270,58 +270,58 @@ table.max_vendidos_1 td {
 }
 .contenProveedor {
     display: flex;
-    flex-wrap: wrap; /* Para que los elementos se envuelvan si no caben en una sola línea */
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 20px; /* Espaciado interno */
-    border-top: 2px solid #ccc; /* Línea superior */
-    width: 100%; /* Ancho completo */
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+    border-top: 2px solid #ccc; 
+    width: 100%; 
 }
 
 .contenProveedor span {
-    margin-right: 20px; /* Espaciado a la derecha del icono */
+    margin-right: 20px;
 }
 
 .contenProveedor img {
-    width: 50px; /* Tamaño de la imagen */
+    width: 50px; 
     height: 50px;
-    border-radius: 50%; /* Forma redondeada */
+    border-radius: 50%;
 }
 
 .contenProveedor h4 {
-    margin: 0; /* Elimina el margen predeterminado */
+    margin: 0; 
 }
 
 .contenProveedor p {
-    margin: 0; /* Elimina el margen predeterminado */
-    margin-bottom: 5px; /* Espaciado inferior */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    overflow: hidden; /* Oculta el texto que desborda */
-    text-overflow: ellipsis; /* Agrega puntos suspensivos para indicar texto truncado */
+    margin: 0; 
+    margin-bottom: 5px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .proveedorInfo {
-    flex-grow: 1; /* Expande este div para llenar el espacio restante */
+    flex-grow: 1; 
 }
 
 .contenedorPadreProd {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    flex-wrap: wrap; 
+    justify-content: space-between;
 }
 
 .contenedorProd {
-    flex: 0 0 calc(33.33% - 20px); /* El 33.33% del ancho del contenedor padre, menos el espacio entre elementos */
-    margin-bottom: 20px; /* Espacio entre filas */
-    text-align: center; /* Centra horizontalmente el contenido */
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px; 
+    text-align: center; 
 }
 
 .contenedorProd img {
-    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-    max-width: 200px; /* Ancho máximo para la imagen */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 100%; 
+    max-width: 200px; 
+    height: auto;
 }
 
 .contenedorProd p {
-    margin: 5px 0; /* Espaciado entre párrafos */
+    margin: 5px 0;
 }
