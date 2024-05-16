@@ -208,10 +208,12 @@ const deleteProducto=()=>{
 }
 contenedorProductos((data)=>{
     let ContenedorProd =document.getElementById('productosContenedor')
-    ContenedorProd.innerHTML=''
+    ContenedorProd.innerHTML=` 
+    `
     data.forEach(producto => {
         console.log(producto);
-        ContenedorProd.innerHTML +=`<div class="contenedorProd"> 
+        ContenedorProd.innerHTML +=`
+        <div class="contenedorProd"> 
         <img src=${producto.image} alt="imgProductos">
         <p>Nombre del producto:</p>
         <p>${producto.title}</p>
@@ -237,7 +239,7 @@ fetch('../json/proveedores.json')
 });
 const contenedorProveedores=(data)=>{
     let contenedorProveedores =document.getElementById('proveedoresContenedor')
-    contenedorProveedores.innerHTML='<a href="/api/addProveedor">Añade a un nuevo proveedor</a>'
+    contenedorProveedores.innerHTML=''
     data.forEach(proveedor => {
         contenedorProveedores.innerHTML +=` 
         <div class="contenProveedor">
