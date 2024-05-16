@@ -201,10 +201,10 @@ function contenedorProductos(done){
     results.then(res=>res.json()).then(data=> {done(data)});
 }
 const editarProducto=()=>{
-    alert("editar productos sera con la api")
+    alert("debes iniciar sesion")
 }
 const deleteProducto=()=>{
-    alert("eliminar productos sera con la api")
+    alert("debes iniciar sesion")
 }
 contenedorProductos((data)=>{
     let ContenedorProd =document.getElementById('productosContenedor')
@@ -225,10 +225,10 @@ contenedorProductos((data)=>{
    
 })
 const editarProveedor=()=>{
- alert("la edicion se va hacer a traves de la api")
+ alert("debes iniciar sesion")
 }
 const deleteProveedor=()=>{
-    alert("se eliminaran con la api")
+    alert("debes iniciar sesion")
 }
 fetch('../json/proveedores.json')
     .then((respuesta) => respuesta.json())
@@ -237,7 +237,7 @@ fetch('../json/proveedores.json')
 });
 const contenedorProveedores=(data)=>{
     let contenedorProveedores =document.getElementById('proveedoresContenedor')
-    contenedorProveedores.innerHTML=''
+    contenedorProveedores.innerHTML='<a href="/api/addProveedor">Añade a un nuevo proveedor</a>'
     data.forEach(proveedor => {
         contenedorProveedores.innerHTML +=` 
         <div class="contenProveedor">
@@ -252,4 +252,39 @@ const contenedorProveedores=(data)=>{
         ` 
     });
 }
+const inicio =()=>{
+    alert("falta implementar la api")
+}
+let login = document.getElementById('login');
+login.innerHTML=`
+<h1  class='d-flex justify-content-center'>Inicia sesión</h1>
+<div class='d-flex justify-content-center'>
+    <br>
+    <div>
+    <form action="" method="">    
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="mb-2">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email" name="username">
+                </div>
+                <div class="mb-2">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                        name="password">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary" onClick="inicio()">Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+    </div>
+
+`;
 
