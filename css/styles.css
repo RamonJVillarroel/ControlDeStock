@@ -11,7 +11,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #1e1e2e;
-    background-image:url(./src/fondop3.png);
+    background-image:url(../src/fondop3.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -268,4 +268,60 @@ table.max_vendidos_1 td {
     background-color: #1f1f31;
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
 }
+.contenProveedor {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+    border-top: 2px solid #ccc; 
+    width: 100%; 
+}
 
+.contenProveedor span {
+    margin-right: 20px;
+}
+
+.contenProveedor img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+}
+
+.contenProveedor h4 {
+    margin: 0; 
+}
+
+.contenProveedor p {
+    margin: 0; 
+    margin-bottom: 5px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.proveedorInfo {
+    flex-grow: 1; 
+}
+
+.contenedorPadreProd {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.contenedorProd {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+.contenedorProd img {
+    width: 100%; 
+    max-width: 200px; 
+    height: auto;
+}
+
+.contenedorProd p {
+    margin: 5px 0;
+}
