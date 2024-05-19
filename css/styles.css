@@ -158,6 +158,21 @@ nav ul{
     .tabla0 {
         grid-template-columns: repeat(1, 1fr); /* Mostrar 1 columna en pantallas pequeñas */
     }
+
+
+    footer{
+        position: relative;
+        display: block;
+        padding: 0 8rem 0 8rem; 
+        justify-content: space-between;
+        background-color: #1f1f31;
+        color: #adb5bd;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+
 }
 /*----------------------------------------------------------------------------------------------*/
 
@@ -214,10 +229,12 @@ table.max_vendidos_1 td {
     /*display: flex;
     justify-content: space-between;*/
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 70px;
     margin-top: 3rem;
-    
+     opacity: 86%;
+
 }
 
 .max_vendidos{
@@ -226,7 +243,8 @@ table.max_vendidos_1 td {
     color: #adb5bd;
     opacity: 86%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+
 }
 
 .categorias_max{
@@ -244,20 +262,17 @@ table.max_vendidos_1 td {
     justify-content: center;
     align-items: center;
     color: #adb5bd;
-    opacity: 86%;
+
     height: 32vh;
 }
 
-.titulo{
-    padding: 1.5rem;
-    border-radius: 5px;
-    opacity: 86%;
+#progressBarsContainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #adb5bd;
-    opacity: 86%;
+    color: #adb5bd; 
 }
+
 
 .titulo1{
     padding: 1.5rem;
@@ -268,6 +283,16 @@ table.max_vendidos_1 td {
     background-color: #1f1f31;
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
 }
+
+
+/*---------------------------*/
+@media (max-width: 410px) {
+    .titulo1{
+       width: 69vw;
+    }
+}
+/*---------------------------*/
+
 .contenProveedor {
     display: flex;
     flex-wrap: wrap; 
@@ -313,13 +338,30 @@ table.max_vendidos_1 td {
 .contenedorProd {
     flex: 0 0 calc(33.33% - 20px);
     margin-bottom: 20px; 
-    text-align: center; 
+
+    max-width: 350px;
+    text-align: center;
+    border-radius: 5px;
+    color: #1f1f31;
+    border: 1px solid #303644;
+    background-color: white;
+    filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
+    opacity: 86%;
+    padding: 0.5rem;
 }
 
 .contenedorProd img {
-    width: 100%; 
+    align-items: center;
+    justify-content: center;
     max-width: 200px; 
-    height: auto;
+    width: 180px;
+    height: 180px;
+    
+}
+
+.contenedorProd:hover {
+    transform: rotateY(10deg); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
 }
 
 .contenedorProd p {
