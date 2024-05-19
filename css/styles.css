@@ -159,6 +159,7 @@ nav ul{
         grid-template-columns: repeat(1, 1fr); /* Mostrar 1 columna en pantallas pequeñas */
     }
 
+
     footer{
         position: relative;
         display: block;
@@ -170,6 +171,7 @@ nav ul{
         font-size: 14px;
         margin-top: 20px;
     }
+
 
 }
 /*----------------------------------------------------------------------------------------------*/
@@ -227,10 +229,12 @@ table.max_vendidos_1 td {
     /*display: flex;
     justify-content: space-between;*/
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 70px;
     margin-top: 3rem;
      opacity: 86%;
+
 }
 
 .max_vendidos{
@@ -239,6 +243,7 @@ table.max_vendidos_1 td {
     color: #adb5bd;
     opacity: 86%;
     display: grid;
+
 
 }
 
@@ -257,6 +262,7 @@ table.max_vendidos_1 td {
     justify-content: center;
     align-items: center;
     color: #adb5bd;
+
     height: 32vh;
 }
 
@@ -278,6 +284,7 @@ table.max_vendidos_1 td {
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
 }
 
+
 /*---------------------------*/
 @media (max-width: 410px) {
     .titulo1{
@@ -285,12 +292,6 @@ table.max_vendidos_1 td {
     }
 }
 /*---------------------------*/
-
-
-/*    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 40px;
-    padding: 0;*/
 
 .contenProveedor {
     display: flex;
@@ -337,6 +338,7 @@ table.max_vendidos_1 td {
 .contenedorProd {
     flex: 0 0 calc(33.33% - 20px);
     margin-bottom: 20px; 
+
     max-width: 350px;
     text-align: center;
     border-radius: 5px;
@@ -361,7 +363,6 @@ table.max_vendidos_1 td {
     transform: rotateY(10deg); 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
 }
-
 
 .contenedorProd p {
     margin: 5px 0;
