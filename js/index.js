@@ -17,7 +17,9 @@ CantidadStock((data) => {
     data.forEach((producto) => {
         const { id, title, category, price, rating } = producto;
 
+
         if (rating.count >= 400) { // Filtrar productos con ventas mayor o igual a 400
+
             const fila = document.createElement('tr');
 
             // Crear celdas para cada propiedad del producto
@@ -211,6 +213,7 @@ contenedorProductos((data)=>{
     ContenedorProd.innerHTML=` 
     `
     data.forEach(producto => {
+
         
         let titulo = producto.title.length > 40 ? producto.title.substring(0, 40) + '...' : producto.title;
 
@@ -218,6 +221,7 @@ contenedorProductos((data)=>{
         <div class="contenedorProd"> 
         <img src=${producto.image} alt="imgProductos">
         <p>Nombre del producto:</p>
+
 
         <p>${titulo}</p>
         <p>Categoria:</p>
