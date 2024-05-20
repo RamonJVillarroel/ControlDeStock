@@ -319,6 +319,7 @@ nav ul{
     .tabla0 {
         grid-template-columns: repeat(1, 1fr); /* Mostrar 1 columna en pantallas pequeñas */
     }
+
 }
 /*----------------------------------------------------------------------------------------------*/
 
