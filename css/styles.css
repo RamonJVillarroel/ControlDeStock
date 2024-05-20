@@ -319,24 +319,6 @@ nav ul{
     .tabla0 {
         grid-template-columns: repeat(1, 1fr); /* Mostrar 1 columna en pantallas pequeñas */
     }
-
-<<<<<<< HEAD
-=======
-
-    footer{
-        position: relative;
-        display: block;
-        padding: 0 8rem 0 8rem; 
-        justify-content: space-between;
-        background-color: #1f1f31;
-        color: #adb5bd;
-        text-align: center;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-
-
->>>>>>> 22a8ec94df76ea235e13c50c2ce18066e6d1c40d
 }
 /*----------------------------------------------------------------------------------------------*/
 
@@ -456,16 +438,6 @@ table.max_vendidos_1 td {
 }
 /*---------------------------*/
 
-<<<<<<< HEAD
-
-/*    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 40px;
-    padding: 0;*/
-
-
-=======
->>>>>>> 22a8ec94df76ea235e13c50c2ce18066e6d1c40d
 .contenProveedor {
     display: flex; 
     justify-content: space-between; 
