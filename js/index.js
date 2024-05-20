@@ -247,7 +247,7 @@ const contenedorProveedores=(data)=>{
         contenedorProveedores.innerHTML +=` 
         <div class="contenProveedor">
         <span><img src=${proveedor.image} alt="imgPerfilproveedor"></span>
-        <h4><strong>Nombre:</strong> ${proveedor.proveedorName}</h4>
+        <h4><strong >Nombre:</strong> ${proveedor.proveedorName}</h4>
         <p><strong>celular:</strong> ${proveedor.numero} </p>
         <p><strong>mail:</strong> ${proveedor.mail} </p>
         <p><strong>productos:</strong> ${proveedor.productos} </p>
