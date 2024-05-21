@@ -16,14 +16,15 @@
             <a href="index.html"><div class="logo"><img src="./src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
             <div class="sesion"><a href="../views/login.html"><i  class="fa-sharp fa-solid fa-user"></i> Iniciar Sesión</a></div>
         </div>  
-
+        
     </header>
+
     <nav>
         <div class="menu-toggle">
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
- 
+        
             <li><a href="index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
@@ -31,6 +32,7 @@
             <li><a href="/views/pedidos.html"><i  class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
         </ul>
     </nav>
+
     <main>
         <h1>Panel Principal</h1>
 
@@ -111,40 +113,8 @@
   
     </main>
 
-    <footer>
-        <div>
-            <h2 class="titulo-contacto">Contactate con nosotros</h2>
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"
-            class="formulario-de-contacto" onsubmit="return validacionFooter();">
-           
-            <label for="nombre">Nombre y Apellido</label>
-            <input type="text" id="nombre-footer" name="nombre" placeholder="Ingrese nombre y apellido">
-            <label id="mensaje-nombre-footer"></label>
-
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo-footer" placeholder="Ingrese su correo">
-            <label id="mensaje-correo-footer"></label>
-
-            <label for="consulta">Consulta</label>
-            <textarea name="comentario" id="comentario-footer" cols="30" rows="5" maxlength="1000"></textarea>
-            <label id="mensaje-comentario-footer"></label>
-            
-            <input id="submit-footer" name="submit" type="submit" value="Enviar">
-            </form>
-        </div>
-        <div class="footer-izquierda">
- 
-            <p class="footer_texto1" style="margin-top: 40px;">Si tenes dudas podes ponerte en contacto con nostros y <br> resolveremos tus dudas de forma inmediata</p>
-            <p class="footer_texto2" style="margin-top: 40px;">Seguinos en las redes</p>
-            <a href="#"><img src="./src/icons8-instagram.svg" alt="" class="img-redes"></a>
-            <a href="#"><img src="./src/icons8-twitterx.svg" alt=""  class="img-redes"></a>
-            <div style="margin-top: 40px;">
-                <p class="footer_texto3">© Codo a Codo 2024</p>
-                <p class="footer_texto4">Diseñado & Desarrollado por <a href="">Julian Borrello</a> | <a href="">Medina</a> | <a href="">Villaroel</a> | <a href="">Zdanovicz</a></p>
-            </div>
-    </div>
-
-    </footer>
+    <footer id="footer"></footer>
+    
     <script src="./js/index.js"></script>
     <script src="./js/footer.js"></script>
 </body>

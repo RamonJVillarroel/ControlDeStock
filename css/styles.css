@@ -27,7 +27,7 @@ a:hover{
 
 header{
     margin: 0;
-    padding: 5px 0 0 0;
+    padding: 7px 0 0 0;
     background-color: #1f1f31;
     color: #adb5bd;
 }
@@ -439,11 +439,18 @@ table.max_vendidos_1 td {
 }
 /*---------------------------*/
 
-.contenProveedor {
-    display: flex; 
-    justify-content: space-between; 
+.max_vendidos_1{
+    padding: 0.5rem;
+}
+table.max_vendidos_1 th{
+    color: white;
+}
 
-    align-items: center;  
+.cajaprov {
+    display: flex;
+    justify-content: center; /* Centra la tabla dentro del contenedor */
+    align-items: center;
+    text-align: center;
     border-radius: 5px;
     color: #ccc;
     border: 1px solid #303644;
@@ -451,34 +458,26 @@ table.max_vendidos_1 td {
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
     opacity: 86%;
     padding: 0.5rem;
+    
+}
+
+.cajaprov1 {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    border-collapse: collapse; /* Para que no haya espacios entre los bordes de las celdas */
 }
 
 
-.contenProveedor span {
-    margin-right: 20px;
+table.cajaprov1 th,
+table.cajaprov1 td {
+    border-bottom-style: dashed;
+    border-bottom: 1px solid #303644;
+    padding: 1rem; 
+    text-align: left;
 }
 
-.contenProveedor img {
-    width: 50px; 
-    height: 50px;
-    border-radius: 50%;
-}
-
-.contenProveedor h4 {
-    margin: 0;
-}
-
-.contenProveedor p {
-    margin-bottom: 5px;
-    justify-content: start;
-    float: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-}
-
-.proveedorInfo {
-    flex-grow: 1; 
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Agrega una barra de desplazamiento horizontal en pantallas pequeñas */
 }
 
 .contenedorPadreProd {
@@ -491,16 +490,28 @@ table.max_vendidos_1 td {
 .contenedorProd {
     flex: 0 0 calc(33.33% - 20px);
     margin-bottom: 20px; 
-
     max-width: 350px;
     text-align: center;
     border-radius: 5px;
     color: #ccc;
-    border: 1px solid #303644;
     background-color: #1f1f31;
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
     opacity: 86%;
     padding: 0.5rem;
+}
+
+.boton_agregar{
+    background-color: rgb(78, 245, 142);
+    color: #1f1f1f;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    padding: 0.5rem; 
+    display: inline-flex;
+}
+
+.boton_agregar:hover{
+    background-color: rgb(57, 201, 76);
 }
 
 .contenedorProd img {
@@ -509,7 +520,20 @@ table.max_vendidos_1 td {
     max-width: 200px; 
     width: 180px;
     height: 180px;
-    
+    border-radius: 50%;
+    border: #f8f9fa 2px solid;
+}
+
+.contenedorProd i, #proveedoresContenedor i, #categoriaContenedor i{
+    font-size: 20px;
+}
+
+.contenedorProd .fa-pen:hover, #proveedoresContenedor .fa-pen:hover, #categoriaContenedor .fa-pen:hover{
+    color: greenyellow;
+}
+
+.contenedorProd .fa-trash-can:hover, #proveedoresContenedor .fa-trash-can:hover, #categoriaContenedor .fa-trash-can:hover{
+    color: red;
 }
 
 .contenedorProd:hover {
