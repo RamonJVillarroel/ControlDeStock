@@ -203,10 +203,10 @@ function contenedorProductos(done){
     results.then(res=>res.json()).then(data=> {done(data)});
 }
 const editarProducto=()=>{
-    alert("debes iniciar sesion")
+    alert("Formulario aun no implementado")
 }
 const deleteProducto=()=>{
-    alert("debes iniciar sesion")
+    alert("Formulario aun no implementado")
 }
 contenedorProductos((data)=>{
     let ContenedorProd =document.getElementById('productosContenedor')
@@ -226,18 +226,18 @@ contenedorProductos((data)=>{
         <p>${titulo}</p>
         <p>Categoria:</p>
         <p>${producto.category}</p>
-        <button  onClick="editarProducto()">Editar</button>
-        <button  onClick="deleteProducto()">Eliminar</button>
+        <button  onClick="editarProducto()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button>
+        <button  onClick="deleteProducto()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button>
         </div>
         `
     });
    
 })
 const editarProveedor=()=>{
- alert("debes iniciar sesion")
+ alert("formulario no implementado")
 }
 const deleteProveedor=()=>{
-    alert("debes iniciar sesion")
+    alert("formulario no implementado")
 }
 fetch('../json/proveedores.json')
     .then((respuesta) => respuesta.json())
@@ -249,18 +249,38 @@ const contenedorProveedores=(data)=>{
     contenedorProveedores.innerHTML=''
     data.forEach(proveedor => {
         contenedorProveedores.innerHTML +=` 
-        <div class="contenProveedor">
-        <span><img src=${proveedor.image} alt="imgPerfilproveedor"></span>
-        <h4><strong >Nombre:</strong> ${proveedor.proveedorName}</h4>
-        <p><strong>celular:</strong> ${proveedor.numero} </p>
-        <p><strong>mail:</strong> ${proveedor.mail} </p>
-        <p><strong>productos:</strong> ${proveedor.productos} </p>
-        <button  onClick="editarProveedor()">Editar</button>
-        <button  onClick="deleteProveedor()">Eliminar</button>
-        </div>   
+        <tr>
+            <td>${proveedor.proveedorName}</td>
+            <td>${proveedor.numero} </td>
+            <td>${proveedor.mail} </td>
+            <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
+            <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
+        </tr>
+
         ` 
     });
 }
+
+fetch('../json/categoria.json')
+.then((respuesta) => respuesta.json())
+.then((data) => {
+    contenedorCategoria(data);
+});
+const contenedorCategoria=(data)=>{
+let contenedorCategoria =document.getElementById('categoriaContenedor')
+contenedorCategoria.innerHTML=''
+data.forEach(categoria => {
+    contenedorCategoria.innerHTML +=` 
+     <tr>
+         <td>${categoria.categoriaName}</td>
+         <td>${categoria.proveedor} </td>
+         <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
+         <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
+     </tr>  
+    ` 
+});
+}
+
 const inicio =()=>{
     alert("falta implementar la api")
 }
@@ -296,4 +316,3 @@ login.innerHTML=`
     </div>
 
 `;
-

@@ -35,3 +35,10 @@ function validacionFooter(){
     // Devolver false si hay algún error para evitar el envío del formulario
     return !hayError;
 }
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('../views/footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer').innerHTML = data;
+    });
+});

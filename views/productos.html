@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Gestor</title>
 </head>
-<body>
+<body style="background-repeat: repeat;">
     
     <header>
         <div class="header">
@@ -33,50 +33,18 @@
         </ul>
     </nav>
 
-    <script src="../js/index.js"></script>
-
-
     <main>
         <h1>Productos disponibles</h1>
-        <a href="../views/form.productos.html">Añade un nuevo producto</a>
+        <a href="../views/form.productos.html"><div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Producto</div></a>
         <div class="contenedorPadreProd" id="productosContenedor"></div>
     </main>
+
+    <footer id="footer"></footer>
+
     <script src="../js/footer.js"></script>
     <script src="../js/index.js"></script>
-    <footer>
-        <div>
-            <h2 class="titulo-contacto">Contactate con nosotros</h2>
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"
-            class="formulario-de-contacto" onsubmit="return validacionFooter();">
-           
-            <label for="nombre">Nombre y Apellido</label>
-            <input type="text" id="nombre-footer" name="nombre" placeholder="Ingrese nombre y apellido">
-            <label id="mensaje-nombre-footer"></label>
 
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo-footer" placeholder="Ingrese su correo">
-            <label id="mensaje-correo-footer"></label>
 
-            <label for="consulta">Consulta</label>
-            <textarea name="comentario" id="comentario-footer" cols="30" rows="5" maxlength="1000"></textarea>
-            <label id="mensaje-comentario-footer"></label>
-            
-            <input id="submit-footer" name="submit" type="submit" value="Enviar">
-            </form>
-        </div>
-        <div class="footer-izquierda">
- 
-            <p class="footer_texto1" style="margin-top: 40px;">Si tenes dudas podes ponerte en contacto con nostros y <br> resolveremos tus dudas de forma inmediata</p>
-            <p class="footer_texto2" style="margin-top: 40px;">Seguinos en las redes</p>
-            <a href="#"><img src="../src/icons8-instagram.svg" alt="" class="img-redes"></a>
-            <a href="#"><img src="../src/icons8-twitterx.svg" alt=""  class="img-redes"></a>
-            <div style="margin-top: 40px;">
-                <p class="footer_texto3">© Codo a Codo 2024</p>
-                <p class="footer_texto4">Diseñado & Desarrollado por <a href="">Julian Borrello</a> | <a href="">Medina</a> | <a href="">Villaroel</a> | <a href="">Zdanovicz</a></p>
-            </div>
-    </div>
-
-    </footer>
 </body>
 
 </html> 

@@ -40,43 +40,31 @@
     </nav>
     <main>
         <h1>Proveedores disponibles</h1>
-        <a href="../views/form.proveedor.html">Añade a un nuevo proveedor</a>
-        <div id="proveedoresContenedor"></div>
+        <a href="../views/form.proveedor.html"><div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Proveedor</div></a>
+       
+        <div class="cajaprov">
+            <div class="table-responsive">
+                <table class="cajaprov1">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Correo</th>
+                            <th style="color: transparent;">-</th>
+                            <th style="color: transparent;">-</th>
+                        </tr>
+                        
+                    </thead>
+                      
+                    <tbody id="proveedoresContenedor"></tbody>
+                </table>
+            </div>
+        </div>
+        
     </main>
 
-    <footer>
-        <div>
-            <h2 class="titulo-contacto">Contactate con nosotros</h2>
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"
-            class="formulario-de-contacto" onsubmit="return validacionFooter();">
-           
-            <label for="nombre">Nombre y Apellido</label>
-            <input type="text" id="nombre-footer" name="nombre" placeholder="Ingrese nombre y apellido">
-            <label id="mensaje-nombre-footer"></label>
-
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo-footer" placeholder="Ingrese su correo">
-            <label id="mensaje-correo-footer"></label>
-
-            <label for="consulta">Consulta</label>
-            <textarea name="comentario" id="comentario-footer" cols="30" rows="5" maxlength="1000"></textarea>
-            <label id="mensaje-comentario-footer"></label>
-            
-            <input id="submit-footer" name="submit" type="submit" value="Enviar">
-            </form>
-        </div>
-        <div class="footer-izquierda">
- 
-            <p class="footer_texto1" style="margin-top: 40px;">Si tenes dudas podes ponerte en contacto con nostros y <br> resolveremos tus dudas de forma inmediata</p>
-            <p class="footer_texto2" style="margin-top: 40px;">Seguinos en las redes</p>
-            <a href="#"><img src="../src/icons8-instagram.svg" alt="" class="img-redes"></a>
-            <a href="#"><img src="../src/icons8-twitterx.svg" alt=""  class="img-redes"></a>
-            <div style="margin-top: 40px;">
-                <p class="footer_texto3">© Codo a Codo 2024</p>
-                <p class="footer_texto4">Diseñado & Desarrollado por <a href="">Julian Borrello</a> | <a href="">Medina</a> | <a href="">Villaroel</a> | <a href="">Zdanovicz</a></p>
-            </div>
-    </div>
-
+    <footer id="footer">
+        
     </footer>
     <script src="../js/footer.js"></script>
     <script src="../js/index.js"></script>

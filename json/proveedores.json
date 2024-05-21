@@ -1,30 +1,21 @@
 [{
-    "proveedorName": "juan pablo",
-    "productos": "tecnologia",
-    "mail":"juan@test.com",
-    "numero":"000000",
-    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
+    "proveedorName": "Polo",
+    "mail":"polo@test.com",
+    "numero":"000000"
 },
 {
-    "proveedorName": "juan pablo",
-    "productos": "ropa hombre",
-    "mail":"juan@test.com",
-    "numero":"000000",
-    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
+    "proveedorName": "Nike",
+    "mail":"nike@test.com",
+    "numero":"000000"
 },
 {
-    "proveedorName": "juan pablo",
-    "productos": "ropa dama",
-    "mail":"juan@test.com",
-    "numero":"000000",
-    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
+    "proveedorName": "Puma",
+    "mail":"puma@test.com",
+    "numero":"000000"
 },
 {
-    "proveedorName": "juan pablo",
-    "productos": "joyeria",
-    "mail":"juan@test.com",
-    "numero":"000000",
-    "image":"https://img.icons8.com/ultraviolet/40/gender-neutral-user.png"
-
+    "proveedorName": "Kingston",
+    "mail":"kingston@test.com",
+    "numero":"000000"
 }
 ]
