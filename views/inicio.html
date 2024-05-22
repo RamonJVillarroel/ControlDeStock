@@ -1,0 +1,71 @@
+
+<h1>Panel Principal</h1>
+    <ul class="tabla0">
+        <li class="tabla1">
+            <p>Cantidad de Productos<i class="fa-solid fa-truck" style="float: right;"></i></p>
+            <p id="cantidadProductos" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #3CBADE; "></p>
+            <div class="valor-barra">
+                <span class="valor-numerico" style="width: 70%;    background-color: #3CBADE;"></span>
+            </div>
+            
+        </li>
+        <li class="tabla1">
+            <p>Pedidos <i class="fa-solid fa-shop" style="float: right;"></i></p>
+            <p id="pedidos" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #e44747; ">140</p>
+            <div class="valor-barra">
+                <span class="valor-numerico" style="width: 40%;    background-color: #e44747;"></span>
+            </div>
+        </li>
+        <li class="tabla1">
+            <p>Ingresos Diarios <i class="fa-solid fa-dollar-sign" style="float: right;"></i></p>
+            <p id="ingDiarios" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #EFB540; "></p>
+            <div class="valor-barra">
+                <span class="valor-numerico" style="width: 85%;    background-color: #EFB540;"></span>
+            </div>
+        </li>
+        <li class="tabla1">
+            <p>Ingresos Totales <i class="fa-solid fa-hand-holding-dollar" style="float: right;"></i></p>
+            <p id="ingTotales" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: rgb(32 183 153); "></p>
+            <div class="valor-barra">
+                <span class="valor-numerico" style="width: 85%;    background-color: rgb(32 183 153);"></span>
+            </div>
+        </li>
+    </ul>
+<section class="seccion_1">
+    <article class="titulo1">
+        <h3>Cantidad de Ventas por Categoria</h3>
+            <div id="progressBarsContainer">
+                <canvas id="miGrafico"></canvas>
+            </div>
+    </article>
+    <article class="titulo1">
+        <h3>Ingresos por Categoria</h3>
+        <div class="grafico_ingresos">
+            <canvas id="miGraficoBarras"></canvas>
+            
+        </div>
+    </article>
+</section>
+<section class="seccion_2">
+    <article class="titulo1">
+        <h3>Productos mas Vendidos</h3>
+        
+        <div class="tabla-scroll">
+            <div class="max_vendidos">
+       
+                <table class="max_vendidos_1">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Titulo</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Ventas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+</section>

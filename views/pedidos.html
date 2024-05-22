@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/04f66e3763.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/pedidos_estilo.css">
     <title>Gestor</title>
 </head>
@@ -15,27 +16,49 @@
 <body>
 
     <header>
-        <div class="header">
-            <a href="../index.html">
-                <div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web">
-                    <p class="nombrelogo">GestorStock</p>
-                </div>
-            </a>
-            <div class="sesion"><a href="/views/login.html"><i class="fa-sharp fa-solid fa-user"></i> Iniciar Sesión</a></div>
+        
+<div class="header">
+    
+    <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
+    
+    <div class="sesion">
+                
+        <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
+    
+        <section class="formulario_inicio">
+        
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
+                
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
+                <label id="mensaje-usuario"></label>
+
+                <label for="password">Contraseña:</label>
+                <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
+                <label id="mensaje-password"></label>
+    
+                <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
+                
+            </form>
+        </section>
+
         </div>
+        
+</div>  
 
     </header>
+    
     <nav>
         <div class="menu-toggle">
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
+        
             <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
             <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
-            <li><a href="/views/pedidos.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
-
+            <li><a href="/views/pedidos.html"><i  class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
         </ul>
     </nav>
 
@@ -79,7 +102,7 @@
                 <textarea name="comentario" id="comentario" cols="30" rows="5" maxlength="1000"></textarea>
                 <label id="mensaje-comentario"></label>
 
-                <input id="submit" name="submit" type="submit" value="Realizar pedido">
+                <input id="submit_pedidos" name="submit_pedidos" type="submit" value="Realizar pedido">
             
             </form>
         </section>
@@ -89,6 +112,7 @@
     
     <script src="../js/pedidos.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
