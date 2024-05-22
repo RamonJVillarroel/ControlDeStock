@@ -252,7 +252,7 @@ nav{
     filter: drop-shadow(0 8px 8px rgba(143, 138, 138, 0.1));
     background-color: #1f1f31;
     opacity: 88%;
-    z-index: 1000;
+    z-index: 300;
 }
 nav ul{
     display: flex;
@@ -298,7 +298,6 @@ nav ul{
     }
 }
 /*--------------------Eliminacion de padding < 850-------------------------------*/
-
 
 
 .tabla0 {
@@ -494,7 +493,7 @@ table.cajaprov1 td {
     text-align: center;
     border-radius: 5px;
     color: #ccc;
-    background-color: #1f1f31;
+    background-color: #30304d;
     filter: drop-shadow(0 8px 8px rgba(97, 94, 94, 0.1));
     opacity: 86%;
     padding: 0.5rem;
@@ -508,6 +507,8 @@ table.cajaprov1 td {
     margin-bottom: 50px;
     padding: 0.5rem; 
     display: inline-flex;
+    cursor: pointer;
+    user-select: none;
 }
 
 .boton_agregar:hover{

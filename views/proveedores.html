@@ -8,39 +8,89 @@
     <script src="https://kit.fontawesome.com/04f66e3763.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/proveedores.css">
     <title>Gestor</title>
 </head>
 
 <body>
 
     <header>
-        <div class="header">
-            <a href="../index.html">
-                <div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web">
-                    <p class="nombrelogo">GestorStock</p>
-                </div>
-            </a>
-            <div class="sesion"><a href="/views/login.html"><i class="fa-sharp fa-solid fa-user"></i> Iniciar Sesión</a>
-            </div>
+        
+<div class="header">
+    
+    <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
+    
+    <div class="sesion">
+        
+        <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
+    
+        <section class="formulario_inicio">
+        
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto" onsubmit="return validacion();">
+                
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
+                <label id="mensaje-usuario"></label>
+
+                <label for="password">Contraseña:</label>
+                <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
+                <label id="mensaje-password"></label>
+    
+                <input id="submit" name="submit" type="submit" value="Iniciar Sesion">
+                
+            </form>
+        </section>
+
         </div>
+        
+</div>  
 
     </header>
+
     <nav>
         <div class="menu-toggle">
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
-
+        
             <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
-            <li><a href="#"><i class="fa-solid fa-users"></i>Proveedores</a></li>
-            <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i>Categorías</a></li>
-            <li><a href="/views/pedidos.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+            <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
+            <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
+            <li><a href="/views/pedidos.html"><i  class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
         </ul>
     </nav>
+    
     <main>
+
+        <section class="formulario">
+        
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto" onsubmit="return validacion();">
+                
+                <p><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
+                
+                <h1 class="titulo-pedido">Agregar Proveedor</h1>
+    
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+                <label id="mensaje-nombre"></label>
+
+                <label for="telefono">Telefono</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su telefono">
+                <label id="mensaje-telefono"></label>
+
+                <label for="correo">Correo</label>
+                <input type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+                <label id="mensaje-correo"></label>
+    
+                <input id="submit" name="submit" type="submit" value="Agregar">
+                
+            </form>
+        </section>
+
         <h1>Proveedores disponibles</h1>
-        <a href="../views/form.proveedor.html"><div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Proveedor</div></a>
+        <div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Proveedor</div>
        
         <div class="cajaprov">
             <div class="table-responsive">
@@ -67,7 +117,9 @@
         
     </footer>
     <script src="../js/footer.js"></script>
+    <script src="../js/login.js"></script>
     <script src="../js/index.js"></script>
+    <script src="../js/proveedores.js"></script>
 </body>
 
 
