@@ -23,9 +23,9 @@
                 
             <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
         
-            <section class="formulario_inicio">
+            <div class="formulario_inicio">
             
-                <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
+                <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
                     
                     <label for="usuario">Usuario:</label>
                     <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
@@ -38,7 +38,7 @@
                     <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
                     
                 </form>
-            </section>
+            </div>
     
         </div>
         
@@ -63,15 +63,15 @@
         
         <section class="formulario">
         
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto" onsubmit="return validacion();">
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto" onsubmit="return validacion();">
                 
-                <p><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
+                <p style="border: none;margin: 0;padding: 0;"><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
                 
-                <h1 class="titulo-pedido">Agregar Producto</h1>
-                <label for="imagen">Imagen:</label>
+                <h2 class="titulo-pedido">Agregar Producto</h2>
+                <label for="img">Imagen:</label>
                 <div class="custom-file-input">
                     <button type="button" id="customFileButton">Subir</button>
-                    <input type="file" id="img" name="img" placeholder="" style="display: none;">
+                    <input type="file" id="img" name="img" style="display: none;">
                 </div>
                 <img id="imagePreview" class="img-preview" src="#" alt="Vista previa de la imagen" style="display: none;">
                 <label id="mensaje-img"></label>
@@ -117,18 +117,19 @@
         <h1>Productos disponibles</h1>
         <div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Producto</div>
         
-        <section>
+        <div>
             <div class="contenedorPadreProd" id="productosContenedor"></div>
-        </section>
+        </div>
 
     </main>
 
     <footer id="footer"></footer>
 
-</body>
 <script src="../js/footer.js"></script>
 <script src="../js/login.js"></script>
 <script src="../js/productos.js"></script>
 <script src="../js/index.js"></script>
+</body>
+
 
 </html> 

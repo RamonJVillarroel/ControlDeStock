@@ -28,13 +28,15 @@ const editarProveedor=()=>{
 
 const boton_agregar = document.querySelector('.boton_agregar');
 const formLinks_prov = document.querySelector('.formulario');
-const formLinks_prov_1 = document.querySelector('.formulario');
 const boton_quitar = document.querySelector('.boton_quitar');
+
 boton_agregar.addEventListener('click', () => {
     formLinks_prov.classList.toggle('activar_form'); // Alternar la clase 'active' en el contenedor de enlaces
 });
-boton_quitar.addEventListener('click', () => {
-    formLinks_prov_1.classList.toggle('activar_form'); // Alternar la clase 'active' en el contenedor de enlaces
+boton_quitar.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation(); // Detener la propagación del evento click
+    formLinks_prov.classList.toggle('activar_form'); // Alternar la clase 'activar_form' en el formulario
 });
 
 function validacion() {
