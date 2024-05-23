@@ -17,34 +17,34 @@
 
     <header>
         
-<div class="header">
-    
-    <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
-    
-    <div class="sesion">
-        
-        <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
-    
-        <section class="formulario_inicio">
-        
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto" onsubmit="return validacion();">
+        <div class="header">
+            
+            <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
+            
+            <div class="sesion">
                 
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
-                <label id="mensaje-usuario"></label>
-
-                <label for="password">Contraseña:</label>
-                <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
-                <label id="mensaje-password"></label>
-    
-                <input id="submit" name="submit" type="submit" value="Iniciar Sesion">
+                <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
+            
+                <div class="formulario_inicio">
                 
-            </form>
-        </section>
-
-        </div>
-        
-</div>  
+                    <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion();">
+                        
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
+                        <label id="mensaje-usuario"></label>
+                    
+                        <label for="password">Contraseña:</label>
+                        <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
+                        <label id="mensaje-password"></label>
+                    
+                        <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
+                        
+                    </form>
+                </div>
+            
+                </div>
+                
+        </div>  
 
     </header>
 
@@ -66,11 +66,11 @@
 
         <section class="formulario">
         
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"class="formulario-de-producto" onsubmit="return validacion();">
+            <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto" onsubmit="return validacion();">
                 
-                <p><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
+                <p style="border: none;margin: 0;padding: 0;"><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
                 
-                <h1 class="titulo-pedido">Agregar Proveedor</h1>
+                <h2 class="titulo-pedido">Agregar Proveedor</h2>
     
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">

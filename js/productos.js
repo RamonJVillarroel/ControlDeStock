@@ -52,13 +52,15 @@ document.getElementById('img').addEventListener('change', function(event) {
 const boton_agregar = document.querySelector('.boton_agregar');
 const boton_quitar = document.querySelector('.boton_quitar');
 const formLinks_prod = document.querySelector('.formulario');
-const formLinks_prod_1 = document.querySelector('.formulario');
+
 
 boton_agregar.addEventListener('click', () => {
     formLinks_prod.classList.toggle('activar_form'); // Alternar la clase 'active' en el contenedor de enlaces
 });
-boton_quitar.addEventListener('click', () => {
-    formLinks_prod_1.classList.toggle('activar_form'); // Alternar la clase 'active' en el contenedor de enlaces
+boton_quitar.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation(); // Detener la propagación del evento click
+    formLinks_prod.classList.toggle('activar_form'); // Alternar la clase 'activar_form' en el formulario
 });
 
 document.getElementById('customFileButton').addEventListener('click', function() {

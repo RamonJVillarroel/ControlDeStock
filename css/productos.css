@@ -30,7 +30,7 @@
 .titulo-pedido{
     font-size: 1.5rem;
     text-align: center;
-    width: 25vw;
+    
 }
 
 .img-preview {
@@ -83,7 +83,7 @@ label {
 
 
 #submit_prod {
-        width: 8rem;
+        width: 25vw;
         height: 2rem;
         margin-top: 20px;
         color: #ffffff;
@@ -101,18 +101,6 @@ label {
     background-color:#067c4f;
 }
 
-
-#nombre{
-    background-image: url(../src/icono_persona_form.svg);
-    background-repeat: no-repeat;
-    background-size: 8%;
-    padding: 10px 20px 5px 35px;
-    background-position: left center;
-}
-
-#nombre:active{
-    background-image: url(../src/icono_persona_form.svg);
-}
 
 
 #mensaje-nombre, #mensaje-precio, #mensaje-seleccion-prod, #mensaje-seleccion-prov, #mensaje-cantidad{
