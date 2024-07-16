@@ -4,10 +4,11 @@ const editarProveedor=()=>{
    const deleteProveedor=()=>{
        alert("No implementado")
    }
-   fetch('../json/proveedores.json')
+   fetch('/views/proveedores')
        .then((respuesta) => respuesta.json())
        .then((data) => {
            contenedorProveedores(data);
+           console.log(data);
    });
    const contenedorProveedores=(data)=>{
        let contenedorProveedores =document.getElementById('proveedoresContenedor')
@@ -15,8 +16,8 @@ const editarProveedor=()=>{
        data.forEach(proveedor => {
            contenedorProveedores.innerHTML +=` 
            <tr>
-               <td>${proveedor.proveedorName}</td>
-               <td>${proveedor.numero} </td>
+               <td>${proveedor.nombre}</td>
+               <td>${proveedor.telefono} </td>
                <td>${proveedor.mail} </td>
                <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
                <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  

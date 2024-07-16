@@ -1,6 +1,6 @@
 <div>
     <h2 class="titulo-contacto">Contactate con nosotros</h2>
-    <form action="#" method="get" enctype="application/x-www-form-urlencoded"
+    <form action="/contacto" method="POST" enctype="application/x-www-form-urlencoded"
     class="formulario-de-contacto" onsubmit="return validacionFooter();">
    
     <label for="nombre-footer">Nombre y Apellido</label>
@@ -8,11 +8,11 @@
     <label id="mensaje-nombre-footer"></label>
 
     <label for="correo-footer">Correo</label>
-    <input type="email" name="correo" id="correo-footer" placeholder="Ingrese su correo">
+    <input type="email" name="mail" id="correo-footer" placeholder="Ingrese su correo">
     <label id="mensaje-correo-footer"></label>
 
     <label for="comentario-footer">Consulta</label>
-    <textarea name="comentario" id="comentario-footer" cols="30" rows="5" maxlength="1000"></textarea>
+    <textarea name="consulta" id="comentario-footer" cols="30" rows="5" maxlength="1000"></textarea>
     <label id="mensaje-comentario-footer"></label>
     
     <input id="submit-footer" name="submit" type="submit" value="Enviar">

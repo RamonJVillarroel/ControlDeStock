@@ -19,30 +19,10 @@
         
 <div class="header">
     
-    <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
-    
-    <div class="sesion">
-                
-        <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
-    
-        <div class="formulario_inicio">
-        
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
-                
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
-                <label id="mensaje-usuario"></label>
-
-                <label for="password">Contraseña:</label>
-                <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
-                <label id="mensaje-password"></label>
-    
-                <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
-                
-            </form>
-        </div>
-
-        </div>
+    <a href="/"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
+    <div>
+        <a href="/logout">Salir</a>
+    </div>
         
 </div>  
 
@@ -54,7 +34,7 @@
         </div>
         <ul class="nav">
         
-            <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="/"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
             <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
@@ -65,15 +45,15 @@
     <main>
         <section class="formulario">
            
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded"
+            <form action="/pedido" method="POST" enctype="application/x-www-form-urlencoded"
             class="formulario-de-producto" onsubmit="return validacion();">
             <h1 class="titulo-pedido">Realiza aca tu pedido</h1>
             <label for="nombre">Nombre y Apellido</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido">
             <label id="mensaje-nombre"></label>
 
-            <label for="correo">Correo</label>
-            <input type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+            <label for="mail">Correo</label>
+            <input type="email" name="mail" id="mail" placeholder="Ingrese su correo">
             <label id="mensaje-correo"></label>
 
             <label for="telefono">Telefono</label>
@@ -84,13 +64,13 @@
             <input type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
             <label id="mensaje-direccion"></label>
 
-                <label for="producto">Seleccione categoria de productos:</label>
-                <select id="producto" name="producto">
+                <label for="categoria">Seleccione categoria de productos:</label>
+                <select id="categoria" name="categoria">
                     <option value="">Seleccione una opcion:</option>
-                    <option value="1">Ropa</option>
-                    <option value="2">Joyeria</option>
-                    <option value="3">Tecnologia</option>
-                    <option value="4">Otro</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Joyeria">Joyeria</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Otro">Otro</option>
                 </select>
                 <label id="mensaje-seleccion"></label>
 
@@ -98,8 +78,8 @@
                 <input type="number" id="cantidad" name="cantidad" min="1">
                 <label id="mensaje-cantidad"></label>
 
-                <label for="comentario">Deje su comentario para una especificacion <br> de los productos</label>
-                <textarea name="comentario" id="comentario" cols="30" rows="5" maxlength="1000"></textarea>
+                <label for="descripcion">Deje su comentario para una especificacion <br> de los productos</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="5" maxlength="1000"></textarea>
                 <label id="mensaje-comentario"></label>
 
                 <input id="submit_pedidos" name="submit_pedidos" type="submit" value="Realizar pedido">
