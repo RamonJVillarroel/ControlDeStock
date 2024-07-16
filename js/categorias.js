@@ -1,4 +1,4 @@
-fetch('/views/categorias')
+fetch('/views/categoria')
 .then((respuesta) => respuesta.json())
 .then((data) => {
     contenedorCategoria(data);

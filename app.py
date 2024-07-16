@@ -102,7 +102,7 @@ def addcategoria():
     proveedor= request.form['proveedor']
     if nombre and proveedor:
         cursor= db.database.cursor()
-        sql="INSERT INTO categorias (nombre,proveedor)VALUES (%s, %s)"
+        sql="INSERT INTO categoria (nombre,proveedor)VALUES (%s, %s)"
         data=(nombre,proveedor)
         cursor.execute(sql,data)
         db.database.commit()
@@ -161,11 +161,11 @@ def getproveedores():
 #ruta para actualizar provedores
 
 #ruta para ver categorias
-@app.route('/views/categorias', methods=['GET'])
+@app.route('/views/categoria', methods=['GET'])
 @login_required
 def getcategorias():
     cursor=db.database.cursor()
-    cursor.execute("SELECT * FROM categorias")
+    cursor.execute("SELECT * FROM categoria")
     resultado=cursor.fetchall()
     
     insertarObjetos= []
