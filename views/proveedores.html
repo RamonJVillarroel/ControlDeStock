@@ -16,35 +16,19 @@
 <body>
 
     <header>
-        
+
         <div class="header">
-            
-            <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
-            
-            <div class="sesion">
-                
-                <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
-            
-                <div class="formulario_inicio">
-                
-                    <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion();">
-                        
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
-                        <label id="mensaje-usuario"></label>
-                    
-                        <label for="password">Contraseña:</label>
-                        <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
-                        <label id="menmargin-ssword"></label>
-                    
-                        <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
-                        
-                    </form>
+
+            <a href="/">
+                <div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web">
+                    <p class="nombrelogo">GestorStock</p>
                 </div>
-            
-                </div>
-                
-        </div>  
+
+            </a>
+            <div>
+                <a href="/logout">Salir</a>
+            </div>
+        </div>
 
     </header>
 
@@ -53,25 +37,27 @@
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
-        
-            <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
+
+            <li><a href="/"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
             <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
-            <li><a href="/views/pedidos.html"><i  class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
+            <li><a href="/views/pedidos.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
         </ul>
     </nav>
-    
+
     <main>
 
         <section class="formulario">
-        
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto" onsubmit="return validacion();">
-                
-                <p style="border: none;margin: 0;padding: 0;"><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
-                
+
+            <form action="/proveedor" method="post" enctype="application/x-www-form-urlencoded"
+                class="formulario-de-producto" onsubmit="return validacion();">
+
+                <p style="border: none;margin: 0;padding: 0;"><button class="boton_quitar"><i
+                            class="fa-solid fa-xmark"></i></button></p>
+
                 <h2 class="titulo-pedido">Agregar Proveedor</h2>
-    
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
                 <label id="mensaje-nombre"></label>
@@ -80,18 +66,18 @@
                 <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su telefono">
                 <label id="mensaje-telefono"></label>
 
-                <label for="correo">Correo</label>
-                <input type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+                <label for="mail">Correo</label>
+                <input type="email" name="mail" id="mail" placeholder="Ingrese su correo">
                 <label id="mensaje-correo"></label>
-    
+
                 <input id="submit" name="submit" type="submit" value="Agregar">
-                
+
             </form>
         </section>
 
         <h1>Proveedores disponibles</h1>
         <div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Proveedor</div>
-       
+
         <div class="cajaprov">
             <div class="table-responsive">
                 <table class="cajaprov1">
@@ -103,18 +89,18 @@
                             <th style="color: transparent;">-</th>
                             <th style="color: transparent;">-</th>
                         </tr>
-                        
+
                     </thead>
-                      
+
                     <tbody id="proveedoresContenedor"></tbody>
                 </table>
             </div>
         </div>
-        
+
     </main>
 
     <footer id="footer">
-        
+
     </footer>
     <script src="../js/footer.js"></script>
     <script src="../js/login.js"></script>

@@ -1,7 +1,8 @@
-fetch('../json/categoria.json')
+fetch('/views/categorias')
 .then((respuesta) => respuesta.json())
 .then((data) => {
     contenedorCategoria(data);
+    console.log(data);
 });
 const contenedorCategoria=(data)=>{
 let contenedorCategoria =document.getElementById('categoriaContenedor')
@@ -9,7 +10,7 @@ contenedorCategoria.innerHTML=''
 data.forEach(categoria => {
     contenedorCategoria.innerHTML +=` 
      <tr>
-         <td>${categoria.categoriaName}</td>
+         <td>${categoria.nombre}</td>
          <td>${categoria.proveedor} </td>
          <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
          <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  

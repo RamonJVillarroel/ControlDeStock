@@ -1,23 +1,28 @@
 .formulario_inicio{
-    display: none;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: #fff8f8;
 }
-
+.div_boton{
+    display: flex;
+    justify-content: center;
+}
 .boton_iniciar{
-    background-color: #adb5bd;
-    color: #1f1f1f;
+    background-color: #f7fbff;
+    color: #161515;
     font-size: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
     padding: 0.5rem; 
-    display: inline-flex;
+    display: flex;
     cursor: pointer;
     user-select: none;
 }
 
 .boton_iniciar:hover{
-    background-color: #dddfe0;
+    background-color: #85d5fd;
 }
 
 .formulario_inicio.activar_form_inicio {
@@ -54,7 +59,7 @@ label {
 
 }
 
-#usuario, #password{
+#nombre, #password{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding: 0.5rem;

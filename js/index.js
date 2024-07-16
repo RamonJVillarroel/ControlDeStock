@@ -1,7 +1,7 @@
 
 function CantidadStock(done){
 
-const results = fetch('https://fakestoreapi.com/products');
+const results = fetch('/views/productos');
 
 results.then(res=>res.json()).then(data=> {done(data)});
 

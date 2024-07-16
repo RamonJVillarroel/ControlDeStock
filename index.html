@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shorcut icon" href="./src/logo1.png">
+    <link rel="shorcut icon" href="../src/logo1.png">
     <script src="https://kit.fontawesome.com/04f66e3763.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/login.css">
     <title>Gestor</title>
 </head>
 
 <body>
-    
-    <header >
+
+    <header>
 
         <div class="header">
-    
-            <a href="./index.html"><div class="logo"><img src="./src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
-            
-            <div class="sesion">
-                
-                <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
-            
-                <div class="formulario_inicio">
-                
-                    <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
-                        
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
-                        <label id="mensaje-usuario"></label>
-        
-                        <label for="password">Contraseña:</label>
-                        <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
-                        <label id="mensaje-password"></label>
-            
-                        <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
-                        
-                    </form>
+
+            <a href="/">
+                <div class="logo"><img src="./src/logo1.png" alt="Logo Sitio Web">
+                    <p class="nombrelogo">GestorStock</p>
                 </div>
-        
-                </div>
-                
-        </div>  
-        
+            </a>
+            <div>
+                <a href="/logout">Salir</a>
+            </div>
+        </div>
+
     </header>
 
     <nav>
@@ -51,22 +35,23 @@
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
-        
-            <li><a href="./index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
+
+            <li><a href="/"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
             <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
-            <li><a href="/views/pedidos.html"><i  class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
+            <li><a href="/views/pedidos.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i> Pedidos</a></li>
         </ul>
     </nav>
 
     <main>
-   
+
         <h1>Panel Principal</h1>
         <ul class="tabla0">
             <li class="tabla1">
                 <p>Cantidad de Productos<i class="fa-solid fa-truck" style="float: right;"></i></p>
-                <p id="cantidadProductos" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #3CBADE; "></p>
+                <p id="cantidadProductos"
+                    style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #3CBADE; "></p>
                 <div class="valor-barra">
                     <span class="valor-numerico" style="width: 70%;    background-color: #3CBADE;"></span>
                 </div>
@@ -74,21 +59,24 @@
             </li>
             <li class="tabla1">
                 <p>Pedidos <i class="fa-solid fa-shop" style="float: right;"></i></p>
-                <p id="pedidos" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #e44747; ">140</p>
+                <p id="pedidos" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #e44747; ">140
+                </p>
                 <div class="valor-barra">
                     <span class="valor-numerico" style="width: 40%;    background-color: #e44747;"></span>
                 </div>
             </li>
             <li class="tabla1">
                 <p>Ingresos Diarios <i class="fa-solid fa-dollar-sign" style="float: right;"></i></p>
-                <p id="ingDiarios" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #EFB540; "></p>
+                <p id="ingDiarios" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: #EFB540; ">
+                </p>
                 <div class="valor-barra">
                     <span class="valor-numerico" style="width: 85%;    background-color: #EFB540;"></span>
                 </div>
             </li>
             <li class="tabla1">
                 <p>Ingresos Totales <i class="fa-solid fa-hand-holding-dollar" style="float: right;"></i></p>
-                <p id="ingTotales" style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: rgb(32 183 153); "></p>
+                <p id="ingTotales"
+                    style=" font-weight: bold; margin-bottom: 5px; font-size: 24px; color: rgb(32 183 153); "></p>
                 <div class="valor-barra">
                     <span class="valor-numerico" style="width: 85%;    background-color: rgb(32 183 153);"></span>
                 </div>
@@ -98,9 +86,9 @@
             <h2 style="display: none;">-</h2>
             <article class="titulo1">
                 <h3>Cantidad de Ventas por Categoria</h3>
-                    <div id="progressBarsContainer">
-                        <canvas id="miGrafico"></canvas>
-                    </div>
+                <div id="progressBarsContainer">
+                    <canvas id="miGrafico"></canvas>
+                </div>
             </article>
             <article class="titulo1">
                 <h3>Ingresos por Categoria</h3>
@@ -117,7 +105,7 @@
 
                 <div class="tabla-scroll">
                     <div class="max_vendidos">
-                    
+
                         <table class="max_vendidos_1">
                             <thead>
                                 <tr>
@@ -139,10 +127,10 @@
 
     <footer id="footer"></footer>
 
-<script src="./js/index.js"></script>
-<script src="./js/login.js"></script>
-<script src="./js/inicio.js"></script>
-<script src="./js/footer.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/inicio.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
 
-</html> 
+</html>

@@ -17,30 +17,10 @@
         
 <div class="header">
     
-    <a href="../index.html"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
-        
-        <div class="sesion">
-                
-            <div class="boton_iniciar"><i  class="fa-sharp fa-solid fa-user" style="margin-right: 2px;"></i> Ingresar</div>
-        
-            <div class="formulario_inicio">
-            
-                <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto-inicio" onsubmit="return validacion_usuario();">
-                    
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Ingrese nombre de usuario">
-                    <label id="mensaje-usuario"></label>
-    
-                    <label for="password">Contraseña:</label>
-                    <input type="text" id="password" name="password" placeholder="Ingrese la contraseña">
-                    <label id="mensaje-password"></label>
-        
-                    <input id="submit_iniciar" name="submit_iniciar" type="submit" value="Iniciar Sesion">
-                    
-                </form>
-            </div>
-    
-        </div>
+    <a href="/"><div class="logo"><img src="../src/logo1.png" alt="Logo Sitio Web"><p class="nombrelogo">GestorStock</p></div></a>
+    <div>
+        <a href="/logout">Salir</a>
+    </div>
         
 </div>  
 
@@ -51,7 +31,7 @@
             <i class="fa-solid fa-bars" style="color: white;"></i>
         </div>
         <ul class="nav">
-            <li><a href="../index.html"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
+            <li><a href="/"><i class="fa-sharp fa-solid fa-house"></i> Inicio</a></li>
             <li><a href="/views/productos.html"><i class="fa-solid fa-truck-fast"></i> Productos</a></li>
             <li><a href="/views/proveedores.html"><i class="fa-solid fa-users"></i> Proveedores</a></li>
             <li><a href="/views/categorias.html"><i class="fa-solid fa-tag"></i> Categorías</a></li>
@@ -62,61 +42,53 @@
     <main>
         
         <section class="formulario">
-        
-            <form action="#" method="get" enctype="application/x-www-form-urlencoded" class="formulario-de-producto" onsubmit="return validacion();">
-                
-                <p style="border: none;margin: 0;padding: 0;"><button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button></p>
-                
+            <form action="/productos" method="POST" enctype="application/x-www-form-urlencoded" class="formulario-de-producto" onsubmit="return validacion();">
+                <p style="border: none; margin: 0; padding: 0;">
+                    <button class="boton_quitar"><i class="fa-solid fa-xmark"></i></button>
+                </p>
                 <h2 class="titulo-pedido">Agregar Producto</h2>
-                <label for="img">Imagen:</label>
-                <div class="custom-file-input">
-                    <button type="button" id="customFileButton">Subir</button>
-                    <input type="file" id="img" name="img" style="display: none;">
-                </div>
-                <img id="imagePreview" class="img-preview" src="#" alt="Vista previa de la imagen" style="display: none;">
+        
+                <label for="imagen">imagen:</label>
+                <input type="text" name="imagen" id="imagen" placeholder="Ingrese uri de la imagen">
                 <label id="mensaje-img"></label>
-    
+        
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
                 <label id="mensaje-nombre"></label>
-    
+        
                 <label for="cantidad">Cantidad:</label>
                 <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ingrese la cantidad">
                 <label id="mensaje-cantidad"></label>
-    
+        
                 <label for="precio">Precio:</label>
                 <input type="number" name="precio" id="precio" placeholder="Ingrese el precio">
                 <label id="mensaje-precio"></label>
-    
+        
                 <label for="proveedor">Seleccione el Proveedor del producto:</label>
                 <select id="proveedor" name="proveedor">
-    
-                    <option value="">Seleccione una opcion:</option>
-                    <option value="1">Nike</option>
-                    <option value="2">Puma</option>
-                    <option value="3">Kingston</option>
-                    <option value="4">Polo</option>
+                    <option>Seleccione una opcion:</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Puma">Puma</option>
+                    <option value="Kingston">Kingston</option>
+                    <option value="Polo">Polo</option>
                 </select>
                 <label id="mensaje-seleccion-prov"></label>
-    
-    
+        
                 <label for="producto">Seleccione categoria del producto:</label>
-                <select id="producto" name="producto">
-                    <option value="">Seleccione una opcion:</option>
-                    <option value="1">Ropa</option>
-                    <option value="2">Joyeria</option>
-                    <option value="3">Tecnologia</option>
-                    <option value="4">Otro</option>
+                <select id="categoria" name="categoria">
+                    <option>Seleccione una opcion:</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Joyeria">Joyeria</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Otro">Otro</option>
                 </select>
                 <label id="mensaje-seleccion-prod"></label>
-    
+        
                 <input id="submit_prod" name="submit_prod" type="submit" value="Agregar">
-                
             </form>
         </section>
         <h1>Productos disponibles</h1>
         <div class="boton_agregar"><i class="fa-solid fa-plus" style="margin-right: 5px;"></i>Agregar Producto</div>
-        
         <div>
             <div class="contenedorPadreProd" id="productosContenedor"></div>
         </div>
