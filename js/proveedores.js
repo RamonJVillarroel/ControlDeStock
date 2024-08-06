@@ -1,9 +1,27 @@
 const editarProveedor=()=>{
     alert("No implementado")
    }
-   const deleteProveedor=()=>{
-       alert("No implementado")
-   }
+const deleteProveedor = (id) => {
+    console.log(id);
+    fetch(`/eliminarproveedor/${id}`, {
+        
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.redirect) {
+            window.location.href = data.redirect;  // Redirigir a la URL proporcionada
+        } else {
+            console.error('Error en la eliminación:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error al eliminar el producto:', error);
+    });
+}
    fetch('/views/proveedores')
        .then((respuesta) => respuesta.json())
        .then((data) => {
@@ -15,12 +33,12 @@ const editarProveedor=()=>{
        contenedorProveedores.innerHTML=''
        data.forEach(proveedor => {
            contenedorProveedores.innerHTML +=` 
-           <tr>
+           <tr id="${proveedor.id}">
                <td>${proveedor.nombre}</td>
                <td>${proveedor.telefono} </td>
                <td>${proveedor.mail} </td>
-               <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
-               <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
+               <td><button  onClick="editarProveedor(${proveedor.id})" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
+               <td><button  onClick="deleteProveedor(${proveedor.id})" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
            </tr>
    
            ` 

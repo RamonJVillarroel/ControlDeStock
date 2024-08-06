@@ -1,20 +1,42 @@
-fetch('/views/categorias')
+fetch('/views/categoria')
 .then((respuesta) => respuesta.json())
 .then((data) => {
     contenedorCategoria(data);
     console.log(data);
 });
+const deletecategoria = (id) => {
+    fetch(`/eliminarcategoria/${id}`, {
+        
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.redirect) {
+            window.location.href = data.redirect;  // Redirigir a la URL proporcionada
+        } else {
+            console.error('Error en la eliminación:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error al eliminar el producto:', error);
+    });
+}
 const contenedorCategoria=(data)=>{
 let contenedorCategoria =document.getElementById('categoriaContenedor')
 contenedorCategoria.innerHTML=''
 data.forEach(categoria => {
     contenedorCategoria.innerHTML +=` 
-     <tr>
+    <div id="${categoria.id}">
+     <tr >
          <td>${categoria.nombre}</td>
          <td>${categoria.proveedor} </td>
-         <td><button  onClick="editarProveedor()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
-         <td><button  onClick="deleteProveedor()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
+         <td><button  onClick="editarProveedor(${categoria.id})" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
+         <td><button  onClick="deletecategoria(${categoria.id})" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
      </tr>  
+     </div>
     ` 
 });
 }
@@ -22,9 +44,7 @@ data.forEach(categoria => {
 const editarProveedor=()=>{
     alert("No implementado")
    }
-   const deleteProveedor=()=>{
-       alert("No implementado")
-   }
+  
 
    const boton_agregar = document.querySelector('.boton_agregar');
    const formLinks_categ = document.querySelector('.formulario');

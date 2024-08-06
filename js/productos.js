@@ -11,8 +11,25 @@ const editarProducto = () => {
     alert("No implementado")
 }
 
-const deleteProducto = () => {
-    alert("No implementado")
+const deleteProducto = (id) => {
+    fetch(`/eliminar/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.redirect) {
+            console.log('Redirigiendo a home:', data.redirect);
+            window.location.href = data.redirect;  // Redirigir a la URL proporcionada
+        } else {
+            console.error('Error en la eliminación:', data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error al eliminar el producto:', error);
+    });
 }
 
 contenedorProductos((data) => {
@@ -21,8 +38,9 @@ contenedorProductos((data) => {
     data.forEach(producto => {
         console.log(producto);
         let nombre = producto.nombre.length > 40 ? producto.nombre.substring(0, 40) + '...' : producto.nombre;
+        console.log(producto.id);
         ContenedorProd.innerHTML += `
-        <div class="contenedorProd">
+        <div class="contenedorProd" id="${producto.id}">
         <img src="${producto.imagen}" alt="imgProductos">
         <p>Nombre del producto: ${producto.nombre}</p>
         <p>Categoria: ${producto.categoria}</p>
@@ -30,7 +48,7 @@ contenedorProductos((data) => {
         <p>Proveedor: ${producto.proveedor}</p>
         <p>cantidad: ${producto.cantidad}</p>
         <button onClick="editarProducto()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button>
-        <button onClick="deleteProducto()" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can"></i></button>
+        <button onClick="deleteProducto(${producto.id})" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
     });

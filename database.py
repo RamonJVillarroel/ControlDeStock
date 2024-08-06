@@ -1,10 +1,10 @@
 import mysql.connector
 
 database = mysql.connector.connect(
-    host='<conexion a db>',
-    user='<usuario>',
+    host='localhost',
+    user='root',
     password='',
-    database='<base de datos>'
+    database='controldestock'
 )
 
 # Función para obtener un usuario por nombre de usuario

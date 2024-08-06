@@ -84,6 +84,7 @@ def addproductos():
 @app.route('/proveedor', methods=['POST'])
 @login_required
 def addproveedor():
+   
     nombre= request.form['nombre']
     telefono= request.form['telefono']
     mail= request.form['mail']
@@ -102,26 +103,8 @@ def addcategoria():
     proveedor= request.form['proveedor']
     if nombre and proveedor:
         cursor= db.database.cursor()
-        sql="INSERT INTO categorias (nombre,proveedor)VALUES (%s, %s)"
+        sql="INSERT INTO categoria (nombre,proveedor)VALUES (%s, %s)"
         data=(nombre,proveedor)
-        cursor.execute(sql,data)
-        db.database.commit()
-    return redirect(url_for('home'))
-#ruta post para pedidos que llegan
-@app.route('/pedido', methods=['POST'])
-@login_required
-def addpedido():
-    nombre= request.form['nombre']
-    mail= request.form['mail']
-    telefono= request.form['telefono']
-    direccion= request.form['direccion']
-    categoria= request.form['categoria']
-    cantidad=request.form['cantidad']
-    descripcion= request.form['descripcion']
-    if nombre and mail and cantidad and telefono and direccion and categoria and cantidad and descripcion:
-        cursor= db.database.cursor()
-        sql="INSERT INTO pedidos (nombre,mail,telefono,direccion,categoria,cantidad,descripcion)VALUES (%s, %s, %s,%s, %s, %s,%s)"
-        data=(nombre,mail,telefono,direccion,categoria,cantidad,descripcion)
         cursor.execute(sql,data)
         db.database.commit()
     return redirect(url_for('home'))
@@ -156,16 +139,35 @@ def getproveedores():
     cursor.close()
     return insertarObjetos
 #ruta para eliminar provedores
+@app.route('/eliminarproveedor/<string:id>', methods=['DELETE'])
+@login_required
+def eliminarproveedor(id):
+    print(f"${id}")
+    try:
+        cursor = db.database.cursor()
+        sql = "DELETE FROM proveedores WHERE id = %s"
+        data = (int(id),)
+        cursor.execute(sql, data)
+        db.database.commit()
+        # Comprobar si se eliminó alguna fila
+        if cursor.rowcount > 0:
+            return jsonify({"message": "categoria eliminado exitosamente", "redirect": url_for('home')}), 200
+        else:
+            return jsonify({"message": "categoria no encontrado"}), 404
 
+    except Exception as e:
+        return jsonify({"message": "Error al eliminar el categoria", "error": str(e)}), 500
+    finally:
+        cursor.close()
 
 #ruta para actualizar provedores
 
 #ruta para ver categorias
-@app.route('/views/categorias', methods=['GET'])
+@app.route('/views/categoria', methods=['GET'])
 @login_required
 def getcategorias():
     cursor=db.database.cursor()
-    cursor.execute("SELECT * FROM categorias")
+    cursor.execute("SELECT * FROM categoria")
     resultado=cursor.fetchall()
     
     insertarObjetos= []
@@ -175,9 +177,27 @@ def getcategorias():
         insertarObjetos.append(dict(zip(nombreColumnas,unregistro)))
     cursor.close()
     return insertarObjetos
-#ruta para eliminar categorias
+#ruta para eliminar categoria
+@app.route('/eliminarcategoria/<string:id>', methods=['DELETE'])
+@login_required
+def eliminarcategoria(id):
+    print(f"${id}")
+    try:
+        cursor = db.database.cursor()
+        sql = "DELETE FROM categoria WHERE id = %s"
+        data = (int(id),)
+        cursor.execute(sql, data)
+        db.database.commit()
+        # Comprobar si se eliminó alguna fila
+        if cursor.rowcount > 0:
+            return jsonify({"message": "categoria eliminado exitosamente", "redirect": url_for('home')}), 200
+        else:
+            return jsonify({"message": "categoria no encontrado"}), 404
 
-
+    except Exception as e:
+        return jsonify({"message": "Error al eliminar el categoria", "error": str(e)}), 500
+    finally:
+        cursor.close()
 #ruta para actualizar categorias
 
 
@@ -197,6 +217,26 @@ def getallproductos():
         insertarObjetos.append(dict(zip(nombreColumnas,unregistro)))
     cursor.close()
     return insertarObjetos
+# Eliminar productos
+@app.route('/eliminar/<string:id>', methods=['DELETE'])
+@login_required
+def eliminar(id):
+    try:
+        cursor = db.database.cursor()
+        sql = "DELETE FROM productos WHERE id = %s"
+        data = (int(id),)
+        cursor.execute(sql, data)
+        db.database.commit()
+        # Comprobar si se eliminó alguna fila
+        if cursor.rowcount > 0:
+            return jsonify({"message": "Producto eliminado exitosamente", "redirect": url_for('home')}), 200
+        else:
+            return jsonify({"message": "Producto no encontrado"}), 404
+
+    except Exception as e:
+        return jsonify({"message": "Error al eliminar el producto", "error": str(e)}), 500
+    finally:
+        cursor.close()
 @app.route('/db_status', methods=['GET'])
 @login_required
 def get_db_status():
