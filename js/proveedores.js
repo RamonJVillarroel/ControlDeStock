@@ -1,6 +1,60 @@
-const editarProveedor=()=>{
-    alert("No implementado")
-   }
+const editarprovedor = (id) => {
+    let updatecategoria = document.getElementById('editarprovedor');
+    updatecategoria.innerHTML = `
+        <form id="formEditarProveedor" method="POST">
+         <h2 class="titulo-pedido">Actualizar Proveedor</h2>
+        
+                 <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+                <label id="mensaje-nombre"></label>
+
+                <label for="telefono">Telefono</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su telefono">
+                <label id="mensaje-telefono"></label>
+
+                <label for="mail">Correo</label>
+                <input type="email" name="mail" id="mail" placeholder="Ingrese su correo">
+                <label id="mensaje-correo"></label>
+
+                <input id="submit" name="submit" type="submit" value="Actualizar">
+        </form>
+    `;
+
+    // Agregar evento de envío al formulario
+    const formEditarProveedor = document.getElementById('formEditarProveedor');
+    formEditarProveedor.onsubmit = (e) => {
+        e.preventDefault(); // Prevenir el envío por defecto del formulario
+
+
+        // Recopilar los datos del formulario
+        const formData = new FormData(formEditarProveedor);
+        const data = new URLSearchParams(formData);
+
+        fetch(`/editarproveedor/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // URL encoding
+            },
+            body: data,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al actualizar la categoría');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.redirect) {
+                window.location.href = data.redirect; // Redirigir a la URL proporcionada
+            } else {
+                console.error('Error en la actualización:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error al actualizar la categoría:', error);
+        });
+    };
+};
 const deleteProveedor = (id) => {
     console.log(id);
     fetch(`/eliminarproveedor/${id}`, {
@@ -37,7 +91,7 @@ const deleteProveedor = (id) => {
                <td>${proveedor.nombre}</td>
                <td>${proveedor.telefono} </td>
                <td>${proveedor.mail} </td>
-               <td><button  onClick="editarProveedor(${proveedor.id})" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
+               <td><button  onClick="editarprovedor(${proveedor.id})" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button></td>
                <td><button  onClick="deleteProveedor(${proveedor.id})" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can " ></i></button></td>  
            </tr>
    
