@@ -160,11 +160,47 @@ def eliminarproveedor(id):
     finally:
         cursor.close()
 
-#ruta para actualizar provedores
+#ruta para actualizar proveedores
+@app.route('/editarproveedor/<string:id>', methods=['POST'])
+@login_required
+def editarproveedor(id):    
+    # Obtener los datos del formulario
+    nombre = request.form.get('nombre', '').strip()
+    telefono = request.form.get('telefono', '').strip()
+    mail = request.form.get('mail', '').strip()
 
+    print(f"Nombre recibido: {nombre}")
+    print(f"Proveedor recibido: {telefono}")
+
+    if nombre and telefono and mail:
+        try:
+            cursor = db.database.cursor()
+            sql = "UPDATE proveedores SET nombre = %s, telefono = %s,mail = %s WHERE id = %s"
+            data = (nombre, telefono,mail, id)
+            cursor.execute(sql, data)
+            db.database.commit()
+
+            if cursor.rowcount > 0:
+                print(f"Categoría con ID {id} actualizada correctamente.")
+                return jsonify({"message": "Categoría actualizada", "redirect": url_for('home')}), 200
+            else:
+                print(f"No se encontró categoría con ID {id}.")
+                return jsonify({"message": "Categoría no encontrada"}), 404
+
+        except Exception as e:
+            print(f"Error al actualizar la categoría: {e}")
+            return jsonify({"message": "Error al actualizar la categoría", "error": str(e)}), 500
+
+        finally:
+            cursor.close()
+
+    # Si faltan campos requeridos
+    return jsonify({"message": "Campos requeridos faltantes"}), 400
+
+#######################################################################################################################################33
 #ruta para ver categorias
 @app.route('/views/categoria', methods=['GET'])
-@login_required
+#@login_required
 def getcategorias():
     cursor=db.database.cursor()
     cursor.execute("SELECT * FROM categoria")
@@ -198,10 +234,45 @@ def eliminarcategoria(id):
         return jsonify({"message": "Error al eliminar el categoria", "error": str(e)}), 500
     finally:
         cursor.close()
-#ruta para actualizar categorias
+#ruta para editar catedoria
+@app.route('/editarcategoria/<string:id>', methods=['POST'])
+@login_required
+def editarcategoria(id):
+    print(f"ID recibido para actualizar: {id}")
+    
+    # Obtener los datos del formulario
+    nombre = request.form.get('nombre', '').strip()
+    proveedor = request.form.get('proveedor', '').strip()
+    
+    print(f"Nombre recibido: {nombre}")
+    print(f"Proveedor recibido: {proveedor}")
 
+    if nombre and proveedor:
+        try:
+            cursor = db.database.cursor()
+            sql = "UPDATE categoria SET nombre = %s, proveedor = %s WHERE id = %s"
+            data = (nombre, proveedor, id)
+            cursor.execute(sql, data)
+            db.database.commit()
 
+            if cursor.rowcount > 0:
+                print(f"Categoría con ID {id} actualizada correctamente.")
+                return jsonify({"message": "Categoría actualizada", "redirect": url_for('home')}), 200
+            else:
+                print(f"No se encontró categoría con ID {id}.")
+                return jsonify({"message": "Categoría no encontrada"}), 404
 
+        except Exception as e:
+            print(f"Error al actualizar la categoría: {e}")
+            return jsonify({"message": "Error al actualizar la categoría", "error": str(e)}), 500
+
+        finally:
+            cursor.close()
+
+    # Si faltan campos requeridos
+    return jsonify({"message": "Campos requeridos faltantes"}), 400
+
+#######################################################################################################################################
 #ruta para ver productos
 @app.route('/views/productos', methods=['GET'])
 @login_required
@@ -237,6 +308,41 @@ def eliminar(id):
         return jsonify({"message": "Error al eliminar el producto", "error": str(e)}), 500
     finally:
         cursor.close()
+#ruta para editar productos
+@app.route('/editarproductos/<string:id>', methods=['POST'])
+@login_required
+def editarproductos(id):    
+    # Obtener los datos del formulario
+    nombre = request.form.get('nombre', '').strip()
+    cantidad = request.form.get('cantidad', '').strip()
+    precio = request.form.get('precio', '').strip()
+    categoria = request.form.get('categoria', '').strip()
+    imagen = request.form.get('imagen', '').strip()
+    if nombre and cantidad and precio and categoria and imagen:
+        try:
+            cursor = db.database.cursor()
+            sql = "UPDATE productos SET nombre = %s, cantidad = %s,precio = %s, categoria = %s,imagen=%s WHERE id = %s"
+            data = (nombre, cantidad,precio,categoria,imagen, id)
+            cursor.execute(sql, data)
+            db.database.commit()
+
+            if cursor.rowcount > 0:
+                print(f"Categoría con ID {id} actualizada correctamente.")
+                return jsonify({"message": "Categoría actualizada", "redirect": url_for('home')}), 200
+            else:
+                print(f"No se encontró categoría con ID {id}.")
+                return jsonify({"message": "Categoría no encontrada"}), 404
+
+        except Exception as e:
+            print(f"Error al actualizar la categoría: {e}")
+            return jsonify({"message": "Error al actualizar la categoría", "error": str(e)}), 500
+
+        finally:
+            cursor.close()
+
+    # Si faltan campos requeridos
+    return jsonify({"message": "Campos requeridos faltantes"}), 400
+
 @app.route('/db_status', methods=['GET'])
 @login_required
 def get_db_status():

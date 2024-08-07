@@ -4,13 +4,88 @@ function contenedorProductos(done) {
     results.then(res => res.json()).then(data => { done(data)}
    
 );
-    
 }
 
-const editarProducto = () => {
-    alert("No implementado")
-}
+const editarproductos = (id) => {
+    let updatecategoria = document.getElementById('editarproductos');
+    updatecategoria.innerHTML = `
+        <form id="formEditarProducto" method="POST">
+         <h2 class="titulo-pedido">Actualizar Producto</h2>
+        
+                <label for="imagen">imagen:</label>
+                <input type="text" name="imagen" id="imagen" placeholder="Ingrese uri de la imagen">
+                <label id="mensaje-img"></label>
+        
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+                <label id="mensaje-nombre"></label>
+        
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" placeholder="Ingrese la cantidad">
+                <label id="mensaje-cantidad"></label>
+        
+                <label for="precio">Precio:</label>
+                <input type="number" name="precio" id="precio" placeholder="Ingrese el precio">
+                <label id="mensaje-precio"></label>
+        
+                <label for="proveedor">Seleccione el Proveedor del producto:</label>
+                <select id="proveedor" name="proveedor">
+                    <option>Seleccione una opcion:</option>
+                    <option value="Nike">Nike</option>
+                    <option value="Puma">Puma</option>
+                    <option value="Kingston">Kingston</option>
+                    <option value="Polo">Polo</option>
+                </select>
+                <label id="mensaje-seleccion-prov"></label>
+        
+                <label for="producto">Seleccione categoria del producto:</label>
+                <select id="categoria" name="categoria">
+                    <option>Seleccione una opcion:</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Joyeria">Joyeria</option>
+                    <option value="Tecnologia">Tecnologia</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <label id="mensaje-seleccion-prod"></label>
+                <input id="submit_prod" name="submit_prod" type="submit" value="Actualizar">
+        </form>
+    `;
 
+    // Agregar evento de envío al formulario
+    const formEditarProducto = document.getElementById('formEditarProducto');
+    formEditarProducto.onsubmit = (e) => {
+        e.preventDefault(); // Prevenir el envío por defecto del formulario
+
+
+        // Recopilar los datos del formulario
+        const formData = new FormData(formEditarProducto);
+        const data = new URLSearchParams(formData);
+
+        fetch(`/editarproductos/${id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // URL encoding
+            },
+            body: data,
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al actualizar la categoría');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.redirect) {
+                window.location.href = data.redirect; // Redirigir a la URL proporcionada
+            } else {
+                console.error('Error en la actualización:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error al actualizar la categoría:', error);
+        });
+    };
+};
 const deleteProducto = (id) => {
     fetch(`/eliminar/${id}`, {
         method: 'DELETE',
@@ -47,7 +122,7 @@ contenedorProductos((data) => {
         <p>Precio: ${producto.precio}</p>
         <p>Proveedor: ${producto.proveedor}</p>
         <p>cantidad: ${producto.cantidad}</p>
-        <button onClick="editarProducto()" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button>
+        <button onClick="editarproductos(${producto.id})" style="color:green;background-color:transparent;border:none;padding:0;cursor:pointer;padding-right:10px"><i class="fa-solid fa-pen"></i></button>
         <button onClick="deleteProducto(${producto.id})" style="color:rgb(242, 93, 93);background-color:transparent;border:none;padding:0;cursor:pointer;"><i class="fa-solid fa-trash-can"></i></button>
         </div>
         `;
